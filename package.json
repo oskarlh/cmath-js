@@ -1,0 +1,33 @@
+{
+  "name": "cmath",
+  "version": "1.0.0",
+  "description": "C's math functions implemented in TypeScript/JavaScript",
+  "main": "dist/cmath.js",
+  "scripts": {
+    "test": "jest --config jest.config.js --coverage"
+  },
+  "keywords": [
+    "cmath",
+    "C",
+    "C++",
+    "Math",
+    "Maths",
+    "JavaScript",
+    "ECMAScript",
+    "TypeScript",
+    "Node",
+    "NodeJS",
+    "Web",
+    "Browser"
+  ],
+  "author": "Oskar Larsson Högfeldt",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.13.9",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  }
+}
