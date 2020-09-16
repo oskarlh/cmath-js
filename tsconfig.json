@@ -1,13 +1,14 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
-		"preserveConstEnums": true,
-		"sourceMap": true,
-		"strict": true,
+		"module": "ES6",
+		"moduleResolution": "node",
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
 		"outDir": "dist",
-		"module": "ES6"
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "ESNext"
 	},
 	"include": [
 		"src/**/*"

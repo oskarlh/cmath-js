@@ -132,40 +132,4 @@ export function hypot(/*double*/ x, /*double*/ y, /*double*/ z) {
     }
     return result;
 }
-/*
-    // C's IEEE-754 sqrt differs from ECMAScript's Math.sqrt in that it is guaranteed to be precise
-    // Cppreference: https://en.cppreference.com/w/c/numeric/math/sqrt
-    // ECMAScript ** operator: https://www.ecma-international.org/ecma-262/9.0/index.html#sec-math.sqrt
-    export function sqrt(double num : number) : double number {
-        let result = Math.sqrt(num);
-        if(num > 0 && num !== Infinity) {
-            if(result === Infinity || result <= 0) { // Extremely unlikely, but since the precision is undefined in ECMAScript...
-                result = 1;
-            }
-            //BUG!! num < 1!!!!!!!!!!!!!!!
-            while((result * 0.5) * (result * 0.5) > num) {
-                result *= 0.5;
-            }
-            while((result * 2) * (result * 2) < num) {
-                result *= 2;
-            }
-            while((result * 67108863/67108864) * (result * 67108863/67108864) > num) {
-                result *= (result * 67108863/67108864);
-            }
-            
-            let suboptimal = false;
-            let closestNumber = result;
-            let direction = result * result < num ? Infinity : -Infinity;
-            do {
-                result = closestNumber;
-                closestNumber = nextafter(result, direction);
-                let imprecision = Math.abs(num - result * result);
-                let closestNumberImprecision = Math.abs(num - closestNumber * closestNumber);
-                suboptimal = imprecision > closestNumberImprecision || (imprecision === closestNumberImprecision && ((frexp(result)[0] * 0x20000000000000) & 1) === 1);
-                console.log(result + "\r\n" + closestNumber + "\r\n" + imprecision + "\r\n" + closestNumberImprecision + " " + suboptimal);
-            } while(suboptimal);
-        }
-        return result;
-    }
-*/
 //# sourceMappingURL=cmath.js.map
