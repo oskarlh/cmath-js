@@ -28,9 +28,6 @@ export function nextafter(/*double*/ num, /*double*/ toward) {
                 } while (result === num);
             }
         }
-        if (toward === num) {
-            result = toward;
-        }
     }
     return result;
 }
