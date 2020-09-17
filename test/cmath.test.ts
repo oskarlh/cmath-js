@@ -11,32 +11,21 @@ test("nextafter", () => {
 	expect(cmath.nextafter(-0, 0)).toBe(0);
 	expect(cmath.nextafter(0, -0)).toBe(-0);
 	expect(cmath.nextafter(-0, -0)).toBe(-0);
+	expect(cmath.nextafter(NaN, NaN)).toBe(NaN);
+	expect(cmath.nextafter(NaN, 0)).toBe(NaN);
+	expect(cmath.nextafter(0, NaN)).toBe(NaN);
 	expect(cmath.nextafter(Infinity, Infinity)).toBe(Infinity);
 	expect(cmath.nextafter(Infinity, -Infinity)).toBe(Number.MAX_VALUE);
 	expect(cmath.nextafter(-Infinity, Infinity)).toBe(-Number.MAX_VALUE);
+	expect(cmath.nextafter(-Infinity, -Infinity)).toBe(-Infinity);
 	expect(cmath.nextafter(Number.MAX_VALUE, Infinity)).toBe(Infinity);
 	expect(cmath.nextafter(-Number.MAX_VALUE, -Infinity)).toBe(-Infinity);
 	expect(cmath.nextafter(Number.MIN_VALUE, -1)).toBe(0);
 	expect(cmath.nextafter(-Number.MIN_VALUE, Infinity)).toBe(-0);
-}, 1000);
-
-/*
-test("sqrt", () => {
-	expect(cmath.sqrt(2)).toBe(1.4142135623730951);
-	expect(cmath.sqrt(4)).toBe(2);
-	expect(cmath.sqrt(5)).toBe(2.23606797749979);
-	expect(cmath.sqrt(6)).toBe(2.44948974278317788133563226438127458095550537109375);
-	expect(cmath.sqrt(7)).toBe(2.64575131106459071617109657381661236286163330078125);
-	expect(cmath.sqrt(8)).toBe(2.828427124746190290949243717477656900882720947265625);
-	expect(cmath.sqrt(8.00000000000001)).toBe(2.828427124746192067306083117728121578693389892578125);
-	expect(cmath.sqrt(81)).toBe(9);
-	expect(cmath.sqrt(-2)).toBe(NaN);
-	expect(cmath.sqrt(NaN)).toBe(NaN);
-	expect(cmath.sqrt(Infinity)).toBe(Infinity);
-	expect(cmath.sqrt(-Infinity)).toBe(NaN);
-	
-}, 1000);*/
-
+	expect(cmath.nextafter(Number.MIN_VALUE, -0)).toBe(0);
+	expect(cmath.nextafter(Number.MIN_VALUE, 1)).toBe(Number.MIN_VALUE * 2);
+	expect(cmath.nextafter(-Number.MIN_VALUE, -1)).toBe(-Number.MIN_VALUE * 2);
+});
 
 test("pow", () => {
 	expect(cmath.pow(0, -3)).toBe(Infinity);
@@ -47,6 +36,12 @@ test("pow", () => {
 	expect(cmath.pow(-0, -4.4)).toBe(Infinity);
 	expect(cmath.pow(0, -Infinity)).toBe(Infinity);
 	expect(cmath.pow(-0, -Infinity)).toBe(Infinity);
+	expect(cmath.pow(NaN, 0)).toBe(1);
+	expect(cmath.pow(1, NaN)).toBe(1);
+	expect(cmath.pow(1, 45)).toBe(1);
+	expect(cmath.pow(1, -654132432423)).toBe(1);
+	expect(cmath.pow(-1, Infinity)).toBe(1);
+	expect(cmath.pow(-1, -Infinity)).toBe(1);
 	expect(cmath.pow(0, 555)).toBe(0);
 	expect(cmath.pow(-0, 713737315)).toBe(-0);
 	expect(cmath.pow(Infinity, -0.2)).toBe(0);
@@ -55,7 +50,7 @@ test("pow", () => {
 	expect(cmath.pow(-Infinity, 3737315.5)).toBe(Infinity);
 	expect(cmath.pow(-3, 3)).toBe(-27);
 	
-}, 1000);
+});
 
 test("signbit", () => {
 	expect(cmath.signbit(-Infinity)).toBe(true);
@@ -66,7 +61,7 @@ test("signbit", () => {
 	expect(cmath.signbit(Infinity)).toBe(false);
 	expect(cmath.signbit(NaN)).toBe(false);
 	
-}, 1000);
+});
 
 
 test("frexp", () => {
@@ -79,7 +74,7 @@ test("frexp", () => {
 	expect(cmath.frexp(-Infinity)).toStrictEqual([-Infinity, 0]);
 	expect(cmath.frexp(-0)).toStrictEqual([-0, 0]);
 	expect(cmath.frexp(NaN)).toStrictEqual([NaN, 0]);
-}, 1000);
+});
 
 
 test("ldexp", () => {
@@ -93,7 +88,7 @@ test("ldexp", () => {
 	expect(cmath.ldexp(NaN, NaN)).toBe(NaN);
 	expect(cmath.ldexp(6, NaN)).toBe(NaN);
 	expect(cmath.ldexp(Infinity, 43)).toBe(Infinity);
-}, 1000);
+});
 
 
 test("copysign", () => {
@@ -101,23 +96,21 @@ test("copysign", () => {
 	expect(cmath.copysign(-8, -0.00000000000000000000001)).toBe(-8);
 	expect(cmath.copysign(-Infinity, 0.00000000000000000000001)).toBe(Infinity);
 	
-}, 1000);
+});
 
-test("fabs", () => {
+
+test("abs and fabs", () => {
+	for(let func of [cmath.abs, cmath.fabs]) {
+		expect(func(123084109743)).toBe(123084109743);
+		expect(func(-123084109743)).toBe(123084109743);
+		expect(func(0)).toBe(0);
+	}
+	expect(cmath.fabs(12523423523523532432)).toBe(12523423523523532432);
+	expect(cmath.fabs(-52523423523523532444432)).toBe(52523423523523532444432);
 	expect(cmath.fabs(-0)).toBe(0);
-	expect(cmath.fabs(1230841097435098143753241324)).toBe(1230841097435098143753241324);
-	expect(cmath.fabs(-1230841097435098143753241324)).toBe(1230841097435098143753241324);
 	expect(cmath.fabs(-Infinity)).toBe(Infinity);
 	expect(cmath.fabs(NaN)).toBe(NaN);
-}, 1000);
-
-test("abs", () => {
-	expect(cmath.abs(-0)).toBe(0);
-	expect(cmath.abs(1230841097435098143753241324)).toBe(1230841097435098143753241324);
-	expect(cmath.abs(-1230841097435098143753241324)).toBe(1230841097435098143753241324);
-	expect(cmath.abs(-Infinity)).toBe(Infinity);
-	expect(cmath.abs(NaN)).toBe(NaN);
-}, 1000);
+});
 
 
 test("hypot", () => {

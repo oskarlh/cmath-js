@@ -5,31 +5,29 @@
 //  C++17: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf
 //  IEEE-754:2008 (IEC 60559): http://irem.univ-reunion.fr/IMG/pdf/ieee-754-2008.pdf
 //  https://en.cppreference.com/
-
-
+// When reading this it's important to remember that 0 === -0, but Object.is(0, -0) === false
 
 
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/nextafter
 export function nextafter(/*double*/ num : number, /*double*/ toward : number) : /*double*/ number {
-	let result = NaN;
-	if(!Number.isNaN(num) && !Number.isNaN(toward)) {
-		result = toward;
-		if(num !== toward) {
-			if(num === Infinity || num === -Infinity) {
-				result = Number.MAX_VALUE * Math.sign(num);
-			} else if(num === 0) {
-				result = Math.sign(toward) * Number.MIN_VALUE;
-			} else if(Object.is(num, -Number.MIN_VALUE)) {
-				result = -0;
-			} else {
-				let differenceMultiplier = 0.5 * Math.sign(num) * (num < toward ? 1 : -1);
-				do {
-					result = num + num * (Number.EPSILON * differenceMultiplier);
-					differenceMultiplier *= 2;
-				} while(result === num);
-			}
-		}
+	if(num === toward) {
+		return toward;
 	}
+	if(num === 0) {
+		return Math.sign(toward) * Number.MIN_VALUE;
+	}
+	if(num === Infinity || num === -Infinity) {
+		return Number.MAX_VALUE * Math.sign(num);
+	}
+	if(num === -Number.MIN_VALUE && toward > num) {
+		return -0;
+	}
+	let differenceMultiplier = 0.5 * Math.sign(num) * (num < toward ? 1 : -1);
+	let result : number;
+	do {
+		result = num + num * (Number.EPSILON * differenceMultiplier);
+		differenceMultiplier *= 2;
+	} while(result === num);
 	return result;
 }
 
@@ -43,6 +41,7 @@ export function pow(/*double*/ base : number, /*double*/ exponent : number) : /*
 	}
 	return result;
 }
+
 
 export function signbit(/*double*/ num : number) : boolean {
 	return Object.is(num, -0) || num < 0;
@@ -87,7 +86,6 @@ export function frexp(/*double*/ num : number) : [/*double*/ number, /*int*/ num
 }
 
 
-
 // ldexp multiplies a floating-point number by an integral power of 2
 // ldexp returns factor * 2**exponent
 // C spec: https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.6
@@ -108,17 +106,17 @@ export function copysign(/*double*/ num : number, /*double*/ sign : number) : /*
 	return Math.abs(num) * (Object.is(0 * Math.sign(sign), -0) ? -1 : 1);
 }
 
+
 // fabs is just like JavaScript's Math.abs
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/fabs
 export function fabs(/*double*/ num : number) : /*double*/ number {
 	return Math.abs(num);
 }
 
+
 // abs is like fabs but for integers
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/abs
-export function abs(/*int*/ num : number) : /*int*/ number {
-	return Math.abs(num);
-}
+export const abs = fabs;
 
 
 // hypot computes the square root of the sum of the squares of x and y, without undue overflow or underflow

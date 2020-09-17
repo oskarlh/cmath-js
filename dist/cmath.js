@@ -5,30 +5,27 @@
 //  C++17: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf
 //  IEEE-754:2008 (IEC 60559): http://irem.univ-reunion.fr/IMG/pdf/ieee-754-2008.pdf
 //  https://en.cppreference.com/
+// When reading this it's important to remember that 0 === -0, but Object.is(0, -0) === false
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/nextafter
 export function nextafter(/*double*/ num, /*double*/ toward) {
-    let result = NaN;
-    if (!Number.isNaN(num) && !Number.isNaN(toward)) {
-        result = toward;
-        if (num !== toward) {
-            if (num === Infinity || num === -Infinity) {
-                result = Number.MAX_VALUE * Math.sign(num);
-            }
-            else if (num === 0) {
-                result = Math.sign(toward) * Number.MIN_VALUE;
-            }
-            else if (Object.is(num, -Number.MIN_VALUE)) {
-                result = -0;
-            }
-            else {
-                let differenceMultiplier = 0.5 * Math.sign(num) * (num < toward ? 1 : -1);
-                do {
-                    result = num + num * (Number.EPSILON * differenceMultiplier);
-                    differenceMultiplier *= 2;
-                } while (result === num);
-            }
-        }
+    if (num === toward) {
+        return toward;
     }
+    if (num === 0) {
+        return Math.sign(toward) * Number.MIN_VALUE;
+    }
+    if (num === Infinity || num === -Infinity) {
+        return Number.MAX_VALUE * Math.sign(num);
+    }
+    if (num === -Number.MIN_VALUE && toward > num) {
+        return -0;
+    }
+    let differenceMultiplier = 0.5 * Math.sign(num) * (num < toward ? 1 : -1);
+    let result;
+    do {
+        result = num + num * (Number.EPSILON * differenceMultiplier);
+        differenceMultiplier *= 2;
+    } while (result === num);
     return result;
 }
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/pow
@@ -99,9 +96,7 @@ export function fabs(/*double*/ num) {
 }
 // abs is like fabs but for integers
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/abs
-export function abs(/*int*/ num) {
-    return Math.abs(num);
-}
+export const abs = fabs;
 // hypot computes the square root of the sum of the squares of x and y, without undue overflow or underflow
 // This implementation allows an optional third argument, as specified in the C++ standard
 // C spec: https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.7
