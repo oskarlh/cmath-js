@@ -92,9 +92,7 @@ export function copysign(/*double*/ num, /*double*/ sign) {
 }
 // fabs is just like JavaScript's Math.abs
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/fabs
-export function fabs(/*double*/ num) {
-    return Math.abs(num);
-}
+export const fabs = Math.abs;
 // abs is like fabs but for integers
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/abs
 export const abs = fabs;

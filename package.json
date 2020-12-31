@@ -1,8 +1,9 @@
 {
   "name": "cmath",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "C's math functions implemented in TypeScript/JavaScript",
   "main": "dist/cmath.js",
+  "types": "dist/cmath.d.ts",
   "scripts": {
     "compile": "tsc",
     "test": "jest --config jest.config.json --coverage"

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"declaration": true,
 		"module": "ES2020",
 		"moduleResolution": "node",
 		"noImplicitReturns": true,
