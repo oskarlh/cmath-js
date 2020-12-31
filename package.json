@@ -1,6 +1,6 @@
 {
   "name": "cmath-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "C's math functions implemented in TypeScript/JavaScript",
   "main": "dist/cmath.js",
   "types": "dist/cmath.d.ts",
