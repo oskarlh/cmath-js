@@ -65,12 +65,14 @@ export function frexp(/*double*/ num : number) : [/*double*/ number, /*int*/ num
 		let exp : number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 1);
 		let x : number = absNum * 2 ** -exp;
 
-		// These while loops compensate for rounding errors that sometimes occur because of ECMAScript's Math.log2's undefined precision
-		// and also works around the issue of 2 ** -exp === Infinity when exp <= -1024
+		// These while loops compensate for rounding errors that may occur because of ECMAScript's Math.log2's undefined precision
+		// and the first one also helps work around the issue of 2 ** -exp === Infinity when exp <= -1024
 		while(x < 0.5) {
 			x *= 2;
 			--exp;
 		}
+
+		// istanbul ignore next This might not run and that's okay. See the above comment
 		while(x >= 1) {
 			x *= 0.5;
 			++exp;
