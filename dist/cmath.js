@@ -80,7 +80,7 @@ export function frexp(/*double*/ num) {
 // Implementation is complicated by the need to avoid underflow/overflow given a large exponent (-1075< >1023)
 export function ldexp(/*double*/ factor, /*int*/ exponent) {
     const halfPowerRoundedTowardZero = 2 ** Math.trunc(exponent * 0.5);
-    return factor * halfPowerRoundedTowardZero * halfPowerRoundedTowardZero * 2 ** Math.sign(exponent % 2);
+    return (factor * halfPowerRoundedTowardZero * halfPowerRoundedTowardZero * 2 ** Math.sign(exponent % 2));
 }
 // copysign produces a value with the magnitude of 'num' and the sign 'sign'
 // Note: ECMAScript does not have negative NaNs

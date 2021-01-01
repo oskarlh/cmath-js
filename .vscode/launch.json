@@ -9,15 +9,8 @@
 			"request": "launch",
 			"name": "Launch Program",
 			"program": "${workspaceFolder}\\test\\cmath.test.ts",
-			"runtimeArgs": [
-				"--experimental-modules"
-			],
-			"outFiles": [
-				"${workspaceFolder}/dist/**/*.js"
-			]
+			"runtimeArgs": ["--experimental-modules"],
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"]
 		}
 	]
 }
-
-
-
