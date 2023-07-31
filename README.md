@@ -1,12 +1,16 @@
 # cmath-js
+Implementations of some of C's math functions in TypeScript/JavaScript.
 
-Implementations of some of C's math functions in JavaScript/TypeScript:
-
-- abs & fabs
+## Floating-point functions 
 - copysign
+- fabs
 - frexp
 - hypot
 - ldexp
 - nextafter
 - pow
 - signbit
+
+## Integer functions
+These accept either a `number` or a `bigint`:
+- abs

@@ -1,0 +1,22 @@
+name: Test, lint, verify modules
+on: [ "pull_request", "push" ]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSE_FILE: docker-compose.ci-verifier.yml
+    steps:
+    - name: Code checkout
+      uses: actions/checkout@v3
+
+    - name: DockerHub Login
+      uses: docker/login-action@v2.1.0
+      with:
+        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+
+    - name: Build image with tests
+      run: docker compose -f $COMPOSE_FILE build
+
+    - name: Run tests, run linter, verify Node modules
+      run: docker compose -f $COMPOSE_FILE run ci-verifier
