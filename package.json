@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
@@ -14,7 +14,7 @@
 		"Oskar Larsson Högfeldt <oskar@oskar.pm>"
 	],
 	"license": "MIT",
-	"description": "C's math functions implemented in TypeScript/JavaScript",
+	"description": "C's math functions in TypeScript & JavaScript",
 	"keywords": [
 		"C",
 		"C++",
