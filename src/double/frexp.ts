@@ -24,7 +24,7 @@ export function frexp(
 			--exp;
 		}
 
-		// istanbul ignore next This might not run and that's okay. See the above comment
+		// istanbul ignore next - This might never run and that's okay. See the above comment
 		while (x >= 1) {
 			x *= 0.5;
 			++exp;
