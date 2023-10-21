@@ -3,7 +3,8 @@ export default {
 	moduleNameMapper: {
 		"^(\\.{1,2}/.*)\\.js$": "$1",
 	},
-	rootDir: "./src",
+	rootDir: ".",
+	roots: ["./src"],
 	testEnvironment: "node",
 	testRegex: "\\.test\\.ts$",
 	transform: {
