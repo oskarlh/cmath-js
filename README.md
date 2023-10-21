@@ -4,7 +4,7 @@ Implementations of some of C's math functions in TypeScript/JavaScript.
 ## Floating-point functions 
 - [`copysign`](https://en.cppreference.com/w/c/numeric/math/copysign)
 - [`fabs`](https://en.cppreference.com/w/c/numeric/math/fabs)
-- [`frexp`](http://en.cppreference.com/w/c/numeric/math/frexp)
+- [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
 - [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)¹
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)

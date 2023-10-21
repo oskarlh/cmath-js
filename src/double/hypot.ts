@@ -2,7 +2,7 @@
 // This implementation allows an optional third argument, as specified in the C++ standard
 // C spec: https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.7
 // C spec: https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.13.10.4
-// C++ spec for 3-arg version: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf#subsection.29.9.3
+// C++ spec for 3-arg version: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf#subsection.29.9.3
 // Cppreference C version (limited to 2 args): https://en.cppreference.com/w/c/numeric/math/hypot
 // Cppreference C++ version (2 or 3 args): https://en.cppreference.com/w/cpp/numeric/math/hypot
 // ECMAScript's Math.hypot: https://www.ecma-international.org/ecma-262/9.0/index.html#sec-math.hypot

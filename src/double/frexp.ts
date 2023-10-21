@@ -1,7 +1,7 @@
 // Note: Instead of "double frexp(double arg, int* exp)" this is built as "[double, int] frexp(double arg)" due to ECMAScripts's lack of pointers
 // A hypothetical issue with this implementation is that the precision the ** operator is not defined in the ECMAScript standard,
 // however, sane ECMAScript implementations should give precise results for 2**<integer> expressions
-// Cppreference: http://en.cppreference.com/w/c/numeric/math/frexp for a more detailed description
+// Cppreference: https://en.cppreference.com/w/c/numeric/math/frexp for a more detailed description
 // Object.is(n, frexp(n)[0] * 2 ** frexp(n)[1]) for all number values of n except when Math.isFinite(n) && Math.abs(n) > 2**1023
 // Object.is(n, (2 * frexp(n)[0]) * 2 ** (frexp(n)[1] - 1)) for all number values of n
 // Object.is(n, frexp(n)[0]) for these values of n: 0, -0, NaN, Infinity, -Infinity
