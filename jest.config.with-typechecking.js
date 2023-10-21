@@ -4,6 +4,7 @@ import withoutTypechecking from "./jest.config.js";
 export default {
 	...withoutTypechecking,
 	collectCoverage: true,
+	collectCoverageFrom: ["./src/**/*.ts"],
 	coverageReporters: ["text"],
 	coverageThreshold: {
 		global: {

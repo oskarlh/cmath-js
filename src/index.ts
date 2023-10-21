@@ -1,3 +1,5 @@
+/* istanbul ignore file - Just re-exports */
+
 // These functions are JavaScript versions of math functions from C and C++
 // They follow the rules for IEEE-754 implementations.
 // References:
