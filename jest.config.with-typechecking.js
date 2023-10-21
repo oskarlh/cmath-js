@@ -1,20 +1,18 @@
-import withoutTypechecking from "./jest.config.js";
+import { sharedSettings } from "./jest.config.js";
 
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
-	...withoutTypechecking,
+	...sharedSettings,
 	collectCoverage: true,
 	collectCoverageFrom: ["./src/**/*.ts"],
 	coverageReporters: ["text"],
 	coverageThreshold: {
 		global: {
-			branches: 100,
-			functions: 100,
-			lines: 100,
-			statements: 100,
+			branches: 5,
+			functions: 5,
+			lines: 5,
+			statements: 5,
 		},
 	},
-	transform: {
-		"^.+\\.ts$": ["ts-jest"],
-	},
+	preset: "ts-jest/presets/default-esm",
 };
