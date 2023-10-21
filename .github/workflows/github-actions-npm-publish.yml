@@ -1,4 +1,4 @@
-name: "Publish to NPM"
+name: "Publish to NPM if package.json's \"version\" field was updated"
 on:
   workflow_run:
     branches: [ "main" ]
