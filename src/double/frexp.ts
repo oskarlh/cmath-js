@@ -9,32 +9,31 @@
 export function frexp(
 	/*double*/ num: number,
 ): [/*double*/ fraction: number, /*int*/ exponent: number] {
-	const result: [number, number] = [num, 0];
-
-	if (num !== 0 && Number.isFinite(num)) {
-		const absNum: number = Math.abs(num);
-
-		let exp: number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 1);
-		let x: number = absNum * 2 ** -exp;
-
-		// These while loops compensate for rounding errors that may occur because of ECMAScript's Math.log2's undefined precision
-		// and the first one also helps work around the issue of 2 ** -exp === Infinity when exp <= -1024
-		while (x < 0.5) {
-			x *= 2;
-			--exp;
-		}
-
-		// istanbul ignore next - This might never run and that's okay. See the above comment
-		while (x >= 1) {
-			x *= 0.5;
-			++exp;
-		}
-
-		if (num < 0) {
-			x = -x;
-		}
-		result[0] = x;
-		result[1] = exp;
+	if (num === 0 || !Number.isFinite(num)) {
+		return [num, 0];
 	}
-	return result;
+
+	const absNum: number = Math.abs(num);
+
+	let exp: number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 1);
+	let x: number = absNum * 2 ** -exp;
+
+	// These while loops compensate for rounding errors that may occur because of ECMAScript's Math.log2's undefined precision
+	// and the first one also helps work around the issue of 2 ** -exp === Infinity when exp <= -1024
+	while (x < 0.5) {
+		x *= 2;
+		--exp;
+	}
+
+	// istanbul ignore next - This might never run and that's okay. See the above comment
+	while (x >= 1) {
+		x *= 0.5;
+		++exp;
+	}
+
+	if (num < 0) {
+		x = -x;
+	}
+
+	return [x, exp];
 }

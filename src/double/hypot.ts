@@ -8,18 +8,15 @@
 // ECMAScript's Math.hypot: https://www.ecma-international.org/ecma-262/9.0/index.html#sec-math.hypot
 // Complicated by the requirements for implementations for IEC 60559 floating-point environments, which thankfully only apply to the 2-arg (C) version
 export function hypot(/*double*/ x: number, /*double*/ y: number, /*double*/ z?: number): number {
-	let result: number = 0;
 	if (z !== undefined) {
-		result = Math.hypot(x, y, z);
-	} else {
-		result = Infinity;
-		if (x !== Infinity && x !== -Infinity && y !== Infinity && y !== -Infinity) {
-			if (x === 0 || y === 0) {
-				result = Math.max(Math.abs(x), Math.abs(y));
-			} else {
-				result = Math.hypot(x, y);
-			}
-		}
+		// 3-arg version which has fewer requirements
+		return Math.hypot(x, y, z);
 	}
-	return result;
+	if (x !== Infinity && x !== -Infinity && y !== Infinity && y !== -Infinity) {
+		if (x === 0 || y === 0) {
+			return Math.max(Math.abs(x), Math.abs(y));
+		}
+		return Math.hypot(x, y);
+	}
+	return Infinity;
 }
