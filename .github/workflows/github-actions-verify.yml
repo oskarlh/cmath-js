@@ -1,4 +1,4 @@
-name: Test, lint, verify modules
+name: "Test, lint, verify modules"
 on: [ "pull_request", "push" ]
 jobs:
   verify:

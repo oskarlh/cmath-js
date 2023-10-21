@@ -1,8 +1,9 @@
-name: Publish to NPM
+name: "Publish to NPM"
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    branches: [ "main" ]
+    types: [ "completed" ]
+    workflows: [ "Test, lint, verify modules" ]
 jobs:
   npm-publish:
     name: npm-publish
