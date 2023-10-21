@@ -10,6 +10,9 @@
 	"types": "dist/index.d.ts",
 	"type": "module",
 	"author": "Oskar Larsson Högfeldt <oskar@oskar.pm>",
+	"contributors": [
+		"Oskar Larsson Högfeldt <oskar@oskar.pm>"
+	],
 	"license": "MIT",
 	"description": "C's math functions implemented in TypeScript/JavaScript",
 	"keywords": [
@@ -47,6 +50,7 @@
 		"build-and-verify": "npm run test-with-typechecking --ci && npm run lint && npm run build",
 		"build-without-typechecking": "swc -C exclude=.test.ts -d dist -s true -- src",
 		"lint": "eslint .",
+		"lint-fix": "eslint . --fix",
 		"prepack": "npm run build",
 		"test": "jest",
 		"test-with-typechecking": "jest --config=jest.config.with-typechecking.js"
