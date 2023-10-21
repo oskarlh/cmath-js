@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
@@ -16,7 +16,6 @@
 	"license": "MIT",
 	"description": "C's math functions implemented in TypeScript/JavaScript",
 	"keywords": [
-		"Browser",
 		"C",
 		"C++",
 		"cmath",
@@ -26,8 +25,7 @@
 		"Maths",
 		"Node",
 		"NodeJS",
-		"TypeScript",
-		"Web"
+		"TypeScript"
 	],
 	"devDependencies": {
 		"@swc/cli": "^0.1",
