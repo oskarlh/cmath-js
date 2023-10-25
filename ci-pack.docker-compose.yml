@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  ci-pack:
+    build:
+      context: .
+      target: ci-pack
+    volumes:
+      - ./dist-pack:/app/dist-pack

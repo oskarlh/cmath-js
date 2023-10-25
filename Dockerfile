@@ -10,8 +10,12 @@ FROM pre-build AS ci-verify
 ENV NODE_ENV development
 CMD ["npm", "run", "verify"]
 
-FROM pre-build AS ci-publish
+FROM pre-build AS ci-pack
+
+COPY ci-pack.sh ./ci-pack.sh
+RUN apk add jq
+RUN chmod +x ci-pack.sh
+
+VOLUME "/app/dist-pack"
 ENV NODE_ENV development
-ENV NPM_AUTH_TOKEN=
-COPY ci-verify-npmrc ./.npmrc
-CMD ["npm", "publish", "--provenance"]
+CMD ["./ci-pack.sh"]

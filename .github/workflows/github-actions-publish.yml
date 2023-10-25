@@ -1,3 +1,4 @@
+# You need to set up secrets.NPM_AUTH_TOKEN for this to work
 name: "Publish to NPM if package.json's \"version\" field was updated"
 on:
   workflow_run:
@@ -22,11 +23,20 @@ jobs:
   publish:
     name: "Publish to NPM"
     runs-on: ubuntu-latest
+    concurrency: npm-publish
     needs: check
     if: needs.check.outputs.exists == '0' # Do not run if NPM already has this version
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v4
+
+      - name: "Install NPM"
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: "Add NPM access token"
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
 
       - name: "Log in to DockerHub"
         uses: docker/login-action@v3
@@ -34,13 +44,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
 
-      - name: "Build an image containing everything needed for building and publishing the library"
-        run: docker compose -f ci-publish.docker-compose.yml build
+      - name: "Build an image containing everything needed for building the library"
+        run: docker compose -f ci-pack.docker-compose.yml build
 
-      - name: "Publish the library"
-        run: docker compose -f ci-publish.docker-compose.yml run ci-publish
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: "Build the library"
+        run: docker compose -f ci-pack.docker-compose.yml run ci-pack
+
+      - name: "Publish the package"
+        run: npm publish --provenance ./dist-pack/latest.gz
 
 permissions:
   id-token: write # Needed for provenance
