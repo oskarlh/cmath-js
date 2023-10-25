@@ -23,7 +23,7 @@ jobs:
     name: publish
     runs-on: ubuntu-latest
     needs: check-if-published-already
-    if: needs.check.outputs.exists == '0' # Do not run if NPM already has this version
+    if: needs.check.outputs.exists == "0" # Do not run if NPM already has this version
     steps:
       - name: "Log in to DockerHub"
         uses: docker/login-action@v3
