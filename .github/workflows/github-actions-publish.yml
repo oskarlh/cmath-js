@@ -47,11 +47,11 @@ jobs:
       - name: "Build an image containing everything needed for building the library"
         run: docker compose -f ci-pack.docker-compose.yml build
 
-      - name: "Build the library"
+      - name: "Pack"
         run: docker compose -f ci-pack.docker-compose.yml run ci-pack
 
       - name: "Publish the package"
-        run: npm publish --provenance ./dist-pack/latest.gz
+        run: npm publish --provenance ./dist-pack/latest.tgz
 
 permissions:
   id-token: write # Needed for provenance
