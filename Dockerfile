@@ -14,4 +14,4 @@ FROM pre-build AS ci-publish
 ENV NODE_ENV development
 ENV NPM_AUTH_TOKEN=
 COPY ci-verify-npmrc ./.npmrc
-CMD ["npm publish --provenance"]
+CMD ["npm", "publish", "--provenance"]
