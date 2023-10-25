@@ -4,6 +4,7 @@ permissions:
   pull-requests: write
 jobs:
   dependabot:
+    name: "Auto-approve"
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]'' }}
     steps:

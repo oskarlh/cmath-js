@@ -2,6 +2,7 @@ name: "Verify: Test, lint, and typecheck"
 on: [ "pull_request", "push" ]
 jobs:
   verify:
+    name: "Verify"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repository"

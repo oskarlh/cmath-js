@@ -7,7 +7,7 @@ on:
 
 jobs:
   check:
-    name: check
+    name: "Check if the version in package.json is already published to NPM"
     runs-on: ubuntu-latest
     outputs:
       exists: ${{ steps.checkpublish.outputs.exists }}
@@ -20,7 +20,7 @@ jobs:
         uses: tehpsalmist/npm-publish-status-action@v1
 
   publish:
-    name: publish
+    name: "Publish to NPM"
     runs-on: ubuntu-latest
     needs: check
     if: needs.check.outputs.exists == '0' # Do not run if NPM already has this version
