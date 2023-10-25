@@ -18,4 +18,4 @@ jobs:
         run: docker compose -f ci-verify.docker-compose.yml build
 
       - name: "Verify"
-        run: docker compose -f ci-verify.docker-compose.yml run ci-verify
+        run: docker compose -f ci-verify.docker-compose.yml run --rm ci-verify

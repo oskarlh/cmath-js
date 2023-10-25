@@ -48,7 +48,7 @@ jobs:
         run: docker compose -f ci-pack.docker-compose.yml build
 
       - name: "Pack"
-        run: docker compose -f ci-pack.docker-compose.yml run ci-pack
+        run: docker compose -f ci-pack.docker-compose.yml run --rm ci-pack
 
       - name: "Publish the package"
         run: npm publish --provenance ./dist-pack/latest.tgz
