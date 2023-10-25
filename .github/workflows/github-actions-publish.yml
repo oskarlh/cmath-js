@@ -1,0 +1,40 @@
+name: "Publish to NPM if package.json's \"version\" field was updated"
+on:
+  workflow_run:
+    branches: [ "main" ]
+    types: [ "completed" ]
+    workflows: [ "Verify: Test, lint, and typecheck" ]
+
+jobs:
+  publish:
+    name: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+        if: ${{ secrets.NPM_AUTH_TOKEN != "" }}
+
+      - name: "Get the version from package.json and check if it has been published already"
+        id: checkpublish
+        uses: tehpsalmist/npm-publish-status-action@v1
+        if: ${{ secrets.NPM_AUTH_TOKEN != "" }}
+
+      - name: "Log in to DockerHub"
+        if: ${{ steps.checkpublish.outputs.exists == "0" }} # Ignore if NPM already has this version
+        uses: docker/login-action@v3
+        with:
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+
+      - name: "Build an image containing everything needed for building and publishing the library"
+        if: ${{ steps.checkpublish.outputs.exists == "0" }} # Ignore if NPM already has this version
+        run: docker compose -f ci-publish.docker-compose.yml build
+
+      - name: "Publish the library"
+        if: ${{ steps.checkpublish.outputs.exists == "0" }} # Ignore if NPM already has this version
+        run: docker compose -f ci-publish.docker-compose.yml run ci-publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+permissions:
+  id-token: write # Needed for provenance

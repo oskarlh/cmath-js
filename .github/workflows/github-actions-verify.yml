@@ -1,22 +1,20 @@
-name: "Test, lint, verify modules"
+name: "Verify: Test, lint, and typecheck"
 on: [ "pull_request", "push" ]
 jobs:
   verify:
     runs-on: ubuntu-latest
-    env:
-      COMPOSE_FILE: docker-compose.ci-verifier.yml
     steps:
-      - name: Code checkout
+      - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: DockerHub Login
+      - name: "DockerHub Login"
         uses: docker/login-action@v3
         with:
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
 
-      - name: Build image with tests
-        run: docker compose -f $COMPOSE_FILE build
+      - name: "Build image needed for verification"
+        run: docker compose -f ci-verify.docker-compose.yml build
 
-      - name: Run tests, run linter, verify Node modules
-        run: docker compose -f $COMPOSE_FILE run ci-verifier
+      - name: "Verify"
+        run: docker compose -f ci-verify.docker-compose.yml run ci-verify
