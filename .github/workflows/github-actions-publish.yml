@@ -6,6 +6,8 @@ on:
     types: [ "completed" ]
     workflows: [ "Verify: Test, lint, and typecheck" ]
 
+concurrency: publish
+
 jobs:
   check:
     name: "Check if the version in package.json is already published to NPM"
@@ -23,7 +25,6 @@ jobs:
   publish:
     name: "Publish to NPM"
     runs-on: ubuntu-latest
-    concurrency: npm-publish
     needs: check
     if: needs.check.outputs.exists == '0' # Do not run if NPM already has this version
     steps:
