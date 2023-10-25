@@ -5,14 +5,14 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == "dependabot[bot]" }}
+    if: ${{ github.actor == 'dependabot[bot]'' }}
     steps:
-      - name: Dependabot metadata
+      - name: "Dependabot metadata"
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Approve a PR
+      - name: "Approve a PR"
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
