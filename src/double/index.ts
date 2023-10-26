@@ -1,5 +1,3 @@
-/* istanbul ignore file - Just re-exports */
-
 export { copysign } from "./copysign.js";
 export { fabs } from "./fabs.js";
 export { frexp } from "./frexp.js";

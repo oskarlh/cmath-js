@@ -4,11 +4,12 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.formatOnType": true,
-	"search.exclude": {
-		"**/node_module": true,
-	},
 	"editor.insertSpaces": false,
 	"eslint.rules.customizations": [
 		{ "rule": "prettier/prettier", "severity": "off" }
-	]
+	],
+	"files.eol": "\n",
+	"search.exclude": {
+		"**/node_module": true,
+	}
 }
