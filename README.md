@@ -1,22 +1,24 @@
 # cmath-js
-Implementations of some of C's math functions in TypeScript/JavaScript.
+Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScript.
 
 ## Floating-point functions 
 - [`copysign`](https://en.cppreference.com/w/c/numeric/math/copysign)
 - [`fabs`](https://en.cppreference.com/w/c/numeric/math/fabs)
 - [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
-- [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)¹
+- [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
 - [`pow`](https://en.cppreference.com/w/c/numeric/math/pow)
 - [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
-### Notes
-1: `hypot` is the C++ version which works just like the C version but accepts an optional third value.
-
 ## Integer functions
-This function accepts either a `number` or a `bigint`:
+These functions accept either a `number` or a `bigint`:
 - [`abs`](https://en.cppreference.com/w/c/numeric/math/abs)
+- [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one)
+- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero)
+- [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one)
+- [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero)
+- [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
 
 ## Test coverage
 The test coverage is a perfect 100% and enforced by the publishing and pull request verification workflows.
