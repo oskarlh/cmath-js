@@ -16,6 +16,8 @@
 	"license": "MIT",
 	"description": "C's math functions in TypeScript & JavaScript",
 	"keywords": [
+		"Bit operations",
+		"Bits",
 		"C",
 		"C++",
 		"cmath",
@@ -23,9 +25,12 @@
 		"frexp",
 		"JavaScript",
 		"Math",
+		"Mathematics",
 		"Maths",
 		"Node",
 		"NodeJS",
+		"Numerics",
+		"popcount",
 		"TypeScript"
 	],
 	"devDependencies": {
