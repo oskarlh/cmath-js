@@ -14,7 +14,7 @@
 		"Oskar Larsson Högfeldt <oskar@oskar.pm>"
 	],
 	"license": "MIT",
-	"description": "C's math functions in TypeScript & JavaScript",
+	"description": "C's and C++'s math functions in TypeScript & JavaScript",
 	"keywords": [
 		"Bit operations",
 		"Bits",
