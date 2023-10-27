@@ -12,7 +12,7 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 - [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
 ## Integer functions
-These functions accept either a `number` or a `bigint`:
+These functions accept either a `bigint` or an integer `number`:
 - [`abs`](https://en.cppreference.com/w/c/numeric/math/abs)
 - [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one)
 - [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero)
