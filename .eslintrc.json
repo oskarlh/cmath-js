@@ -17,6 +17,7 @@
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-unused-vars": "off",
 		"curly": ["warn", "multi-line"],
+		"no-constant-condition": ["error", { "checkLoops": false }],
 		"no-else-return": ["warn", { "allowElseIf": true }],
 		"no-param-reassign": [
 			"error",

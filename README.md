@@ -18,6 +18,8 @@ These functions accept either a `bigint` or an integer `number`:
 - [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero)
 - [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one)
 - [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero)
+- [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd)
+- [`lcm`](https://en.cppreference.com/w/cpp/numeric/lcm)
 - [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
 
 ## Test coverage
