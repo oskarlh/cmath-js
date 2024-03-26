@@ -22,7 +22,7 @@ These functions accept either a `bigint` or an integer `number`:
 - [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
 
 ## Functions for both floats and ints
-- [`iota`](https://en.cppreference.com/w/cpp/numeric/iota)
+- [`iota`](https://en.cppreference.com/w/cpp/algorithm/iota)
 - [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
 ## Test coverage
