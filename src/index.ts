@@ -7,5 +7,6 @@
 //  https://en.cppreference.com/
 // When reading this code it's important to remember that 0 === -0, but Object.is(0, -0) === false
 
-export * from "./double/index.js";
-export * from "./integer/index.js";
+export * from "./all-numbers/index.js";
+export * from "./doubles/index.js";
+export * from "./integers/index.js";

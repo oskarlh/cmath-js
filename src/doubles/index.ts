@@ -5,4 +5,3 @@ export { hypot } from "./hypot.js";
 export { ldexp } from "./ldexp.js";
 export { nextafter } from "./nextafter.js";
 export { pow } from "./pow.js";
-export { signbit } from "./signbit.js";
