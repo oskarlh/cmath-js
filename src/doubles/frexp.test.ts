@@ -1,6 +1,6 @@
 import { frexp } from "./frexp.js";
 
-describe("frexp", () => {
+describe(frexp.name, () => {
 	it("decomposes a number into a normalized fraction and an integral power of two", () => {
 		expect(frexp(1)).toStrictEqual([0.5, 1]);
 		expect(frexp(1.5)).toStrictEqual([0.75, 1]);

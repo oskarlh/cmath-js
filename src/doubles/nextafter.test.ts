@@ -1,6 +1,6 @@
 import { nextafter } from "./nextafter.js";
 
-describe("nextafter", () => {
+describe(nextafter.name, () => {
 	it("returns the next representable value in the direction of another number", () => {
 		expect(nextafter(-3.5, 3.5)).toBe(-3.5 + Number.EPSILON * 2);
 		expect(nextafter(1, 2)).toBe(1 + Number.EPSILON);

@@ -1,6 +1,6 @@
 import { signbit } from "./signbit.js";
 
-describe("signbit", () => {
+describe(signbit.name, () => {
 	it("determines if a number is negative", () => {
 		expect(signbit(-Infinity)).toBe(true);
 		expect(signbit(-53245432534253)).toBe(true);

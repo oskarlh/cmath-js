@@ -1,6 +1,6 @@
 import { ldexp } from "./ldexp";
 
-describe("ldexp", () => {
+describe(ldexp.name, () => {
 	it("multiplies a number by 2 raised to an exponent power", () => {
 		expect(ldexp(1.5, -1)).toBe(0.75);
 		expect(ldexp(2 ** 25, -3)).toBe(2 ** 22);

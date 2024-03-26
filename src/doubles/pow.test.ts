@@ -1,6 +1,6 @@
 import { pow } from "./pow.js";
 
-describe("pow", () => {
+describe(pow.name, () => {
 	it("returns the value of a base raised to a power exponent", () => {
 		expect(pow(0, -3)).toBe(Infinity);
 		expect(pow(-0, -3)).toBe(-Infinity);
