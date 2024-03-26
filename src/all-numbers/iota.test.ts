@@ -12,7 +12,7 @@ describe(iota.name, () => {
 	});
 
 	it("accepts empty arrays", () => {
-		const emptyArray = [];
+		const emptyArray: [] = [];
 		iota(emptyArray, 10.1);
 		expect(emptyArray).toStrictEqual([]);
 	});
