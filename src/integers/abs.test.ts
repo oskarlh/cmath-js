@@ -1,6 +1,6 @@
 import { abs } from "./abs.js";
 
-describe("abs", () => {
+describe(abs.name, () => {
 	it("returns the absolute value of an integer number or bigint", () => {
 		expect(abs(123084109743)).toBe(123084109743);
 		expect(abs(123084109743n)).toBe(123084109743n);

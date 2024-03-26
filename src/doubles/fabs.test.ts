@@ -1,6 +1,6 @@
 import { fabs } from "./fabs.js";
 
-describe("fabs", () => {
+describe(fabs.name, () => {
 	it("returns the absolute value of a floating-point number", () => {
 		expect(fabs(123084109743)).toBe(123084109743);
 		expect(fabs(-123.4)).toBe(123.4);
