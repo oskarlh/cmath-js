@@ -1,7 +1,7 @@
 # cmath-js
 Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScript.
 
-## Floating-point functions 
+## Floating-point functions
 - [`copysign`](https://en.cppreference.com/w/c/numeric/math/copysign)
 - [`fabs`](https://en.cppreference.com/w/c/numeric/math/fabs)
 - [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
@@ -9,7 +9,6 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
 - [`pow`](https://en.cppreference.com/w/c/numeric/math/pow)
-- [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
 ## Integer functions
 These functions accept either a `bigint` or an integer `number`:
@@ -21,6 +20,9 @@ These functions accept either a `bigint` or an integer `number`:
 - [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd)
 - [`lcm`](https://en.cppreference.com/w/cpp/numeric/lcm)
 - [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
+
+## Functions for both floats and ints
+- [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
 ## Test coverage
 The test coverage is a perfect 100% and enforced by the publishing and pull request verification workflows.
