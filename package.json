@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "1.4.2",
+	"version": "1.4.3",
 	"exports": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
@@ -16,6 +16,7 @@
 	"license": "MIT",
 	"description": "C's and C++'s math functions in TypeScript & JavaScript",
 	"keywords": [
+		"bigint",
 		"Bit operations",
 		"Bits",
 		"C",
@@ -25,6 +26,7 @@
 		"ECMAScript",
 		"frexp",
 		"gcd",
+		"IEEE754",
 		"iota",
 		"JavaScript",
 		"lcm",
@@ -34,9 +36,11 @@
 		"NaN",
 		"Node",
 		"NodeJS",
+		"Numbers",
 		"Numerics",
 		"popcount",
 		"signbit",
+		"STL",
 		"TypeScript"
 	],
 	"devDependencies": {
