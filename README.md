@@ -7,6 +7,7 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 - [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
 - [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
+- [`nan](https://en.cppreference.com/w/c/numeric/math/nan)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
 - [`pow`](https://en.cppreference.com/w/c/numeric/math/pow)
 
@@ -25,6 +26,9 @@ These functions accept either a `bigint` or an integer `number`:
 ## Functions for both floats and ints
 - [`iota`](https://en.cppreference.com/w/cpp/algorithm/iota)
 - [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
+
+## Mathematical constants
+- Constants in [the `std::numbers` namespace](https://en.cppreference.com/w/cpp/numeric/constants)
 
 ## Test coverage
 The test coverage is a perfect 100% and enforced by the publishing and pull request verification workflows.

@@ -11,6 +11,10 @@ describe(signbit.name, () => {
 		expect(signbit(98970789063)).toBe(false);
 		expect(signbit(98970789063n)).toBe(false);
 		expect(signbit(Infinity)).toBe(false);
-		expect(signbit(NaN)).toBe(false);
+
+		// Most JS engines should support these, but the ECMAScript standard does not
+		// guarantee that +NaN and -NaN are different
+		// expect(signbit(NaN)).toBe(false);
+		// expect(signbit(-NaN)).toBe(true);
 	});
 });
