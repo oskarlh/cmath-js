@@ -1,4 +1,4 @@
-import { ldexp } from "./ldexp";
+import { ldexp } from "./ldexp.js";
 
 describe(ldexp.name, () => {
 	it("multiplies a number by 2 raised to an exponent power", () => {

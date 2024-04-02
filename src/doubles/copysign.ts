@@ -1,4 +1,4 @@
-import { signbit } from "../all-numbers";
+import { signbit } from "../all-numbers/index.js";
 
 // copysign produces a value with the magnitude of 'num' and the sign 'sign'
 // C spec: https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.11

@@ -7,7 +7,7 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 - [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
 - [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
-- [`nan](https://en.cppreference.com/w/c/numeric/math/nan)
+- [`nan`](https://en.cppreference.com/w/c/numeric/math/nan)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
 - [`pow`](https://en.cppreference.com/w/c/numeric/math/pow)
 

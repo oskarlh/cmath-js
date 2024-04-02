@@ -1,4 +1,4 @@
-import { bitsInUnsignedInteger } from "./bitsInUnsignedInteger";
+import { bitsInUnsignedInteger } from "../internal/bitsInUnsignedInteger.js";
 
 // Count trailing 1 bits
 // Cppreference: https://en.cppreference.com/w/cpp/numeric/countr_one

@@ -1,4 +1,4 @@
-import { bitsInUnsignedInteger } from "./bitsInUnsignedInteger";
+import { bitsInUnsignedInteger } from "../internal/bitsInUnsignedInteger.js";
 
 // Count leading 1 bits
 // Cppreference: https://en.cppreference.com/w/cpp/numeric/countl_one
