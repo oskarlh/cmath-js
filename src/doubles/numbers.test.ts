@@ -5,7 +5,7 @@ describe("std::number mathematical constants", () => {
 		expect(Object.keys(numbers).length).toBeGreaterThan(10);
 
 		for (const constantName in numbers) {
-			expect(typeof numbers[constantName]).toBe("number");
+			expect(typeof numbers[constantName as keyof typeof numbers]).toBe("number");
 		}
 	});
 });
