@@ -18,7 +18,7 @@ describe(iota.name, () => {
 	});
 
 	it("accepts sparse arrays", () => {
-		const sparseArray = new Array(5);
+		const sparseArray = new Array<number>(5);
 		sparseArray[1] = 400;
 		sparseArray[3] = 400;
 		iota(sparseArray, -50);

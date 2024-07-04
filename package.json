@@ -52,6 +52,7 @@
 		"@swc/cli": "^0.4",
 		"@swc/core": "^1",
 		"@swc/jest": "^0.2",
+		"@types/eslint__js": "^8.42.3",
 		"@types/jest": "^29",
 		"@types/node": "^20",
 		"eslint": "^9",
@@ -64,7 +65,7 @@
 		"typescript-eslint": "^8.0.0-alpha.39"
 	},
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc --project tsconfig.build.json",
 		"lint": "eslint .",
 		"lint-fix": "eslint . --fix",
 		"prepack": "npm run build",

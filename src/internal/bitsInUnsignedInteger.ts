@@ -9,7 +9,7 @@ export function bitsInUnsignedInteger(
 	values: [fixedIntegerSizeInBits: number, integer: bigint | number] | [integer: bigint | number],
 ): Uint8Array {
 	let integer: bigint | number;
-	let fixedIntegerSizeInBits: number = NaN; // NOTE: NaN does not compare equal to anything
+	let fixedIntegerSizeInBits = NaN; // NOTE: NaN does not compare equal to anything
 
 	if (values.length === 1) {
 		[integer] = values;
@@ -35,6 +35,7 @@ export function bitsInUnsignedInteger(
 		bitString = bitString.padStart(fixedIntegerSizeInBits, "0");
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 	const digits = Uint8Array.from(bitString satisfies Iterable<string> as Iterable<any>);
 
 	if (digits.length > fixedIntegerSizeInBits) {

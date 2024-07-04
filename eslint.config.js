@@ -13,15 +13,26 @@ export default tseslint.config(
 			globals: {
 				node: true,
 			},
+			parserOptions: {
+				project: true,
+				tsconfigRootDir: import.meta.dirname,
+			},
 		},
 	},
 	eslint.configs.recommended,
-	...tseslint.configs.recommended,
+	...tseslint.configs.strictTypeChecked,
+	...tseslint.configs.stylisticTypeChecked,
 	{
 		rules: {
 			"@typescript-eslint/ban-ts-comment": "off",
 			"@typescript-eslint/no-empty-function": "off",
 			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/no-unnecessary-condition": [
+				"error",
+				{
+					allowConstantLoopConditions: true,
+				},
+			],
 			"@typescript-eslint/no-unused-vars": "off",
 			curly: ["warn", "multi-line"],
 			"no-constant-condition": ["error", { checkLoops: false }],
