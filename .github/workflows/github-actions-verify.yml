@@ -10,7 +10,6 @@ jobs:
 
       - name: Check if the DockerHub secrets are available
         id: dockerhub-secrets-check
-        shell: bash
         run: |
           echo "available=$([ "${{ secrets.DOCKERHUB_USERNAME }}" = "" ] || echo 1)" >> $GITHUB_OUTPUT
 
