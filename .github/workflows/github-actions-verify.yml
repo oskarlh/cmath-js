@@ -12,10 +12,10 @@ jobs:
         id: dockerhub-secrets-check
         shell: bash
         run: |
-          if [ "${{ secrets.DOCKERHUB_USERNAME }}" != '' ]; then
-            echo "available=true" >> $GITHUB_OUTPUT;
+          if [ "${{ secrets.DOCKERHUB_USERNAME }}" = '' ]; then
+            echo "available=0" >> $GITHUB_OUTPUT;
           else
-            echo "available=false" >> $GITHUB_OUTPUT;
+            echo "available=1" >> $GITHUB_OUTPUT;
           fi
 
       - name: "DockerHub Login"
