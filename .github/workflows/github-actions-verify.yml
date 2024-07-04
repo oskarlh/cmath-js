@@ -11,7 +11,7 @@ jobs:
       - name: Check if the DockerHub secrets are available
         id: dockerhub-secrets-check
         run: |
-          echo "available=$([ "${{ secrets.DOCKERHUB_USERNAME }}" = "" ] || echo 1)" >> $GITHUB_OUTPUT
+          echo "available=$([ "" = "" ] || echo 1)" >> $GITHUB_OUTPUT
 
       - name: "DockerHub Login"
         if: ${{ steps.dockerhub-secrets-check.outputs.available }}
