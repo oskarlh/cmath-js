@@ -19,7 +19,7 @@ jobs:
           fi
 
       - name: "DockerHub Login"
-        if: ${{ steps.dockerhub-secrets-check.available != '0' }}
+        if: ${{ steps.dockerhub-secrets-check.outputs.available }}
         uses: docker/login-action@v3
         with:
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
