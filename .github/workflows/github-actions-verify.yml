@@ -8,8 +8,18 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v4
 
+      - name: Check if the DockerHub secrets are available
+        id: dockerhub-secrets-check
+        shell: bash
+        run: |
+          if [ "${{ secrets.DOCKERHUB_USERNAME }}" != '' ]; then
+            echo "available=true" >> $GITHUB_OUTPUT;
+          else
+            echo "available=false" >> $GITHUB_OUTPUT;
+          fi
+
       - name: "DockerHub Login"
-        if: ${{ secrets }}
+        if: ${{ steps.dockerhub-secrets-check.available }}
         uses: docker/login-action@v3
         with:
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
