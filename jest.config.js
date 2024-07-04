@@ -13,6 +13,6 @@ export const sharedSettings = {
 export default {
 	...sharedSettings,
 	transform: {
-		"^.+\\.ts$": ["@swc/jest"],
+		"^.+\\.ts$": ["@swc/jest", {}],
 	},
 };
