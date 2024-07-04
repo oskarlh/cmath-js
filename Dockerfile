@@ -2,7 +2,7 @@
 
 FROM node:20-alpine as pre-build
 WORKDIR /app
-COPY .prettier* LICENSE README.md eslint.config.js jest.* package.json package-lock.json tsconfig.json ./
+COPY *.config.js .prettier* LICENSE README.md jest.* package.json package-lock.json tsconfig.json tsconfig.*.json ./
 RUN NODE_ENV=development npm install
 COPY src ./src
 
