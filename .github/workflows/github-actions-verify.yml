@@ -15,6 +15,7 @@ jobs:
           if [ "${{ secrets.DOCKERHUB_USERNAME }}" = '' ]; then
             echo "available=0" >> $GITHUB_OUTPUT;
           else
+            echo "${{ secrets.DOCKERHUB_USERNAME = '' }}"z
             echo "available=1" >> $GITHUB_OUTPUT;
           fi
 
