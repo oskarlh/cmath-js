@@ -13,9 +13,6 @@ jobs:
         shell: bash
         run: |
           [ "${{ secrets.DOCKERHUB_USERNAME }}" = "" ]
-          available=$?
-          echo "available=${available}" >> $GITHUB_OUTPUT
-          exit 0
 
       - name: "DockerHub Login"
         if: ${{ steps.dockerhub-secrets-check.outputs.available }}
