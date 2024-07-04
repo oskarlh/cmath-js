@@ -12,7 +12,7 @@ jobs:
         id: dockerhub-secrets-check
         shell: bash
         run: |
-          [ "${{ secrets.DOCKERHUB_USERNAME }}" = "" ]
+          [ "${{ secrets.DOCKERHUB_USERNAME }}" = "" ];
           available=0
 
       - name: "DockerHub Login"
