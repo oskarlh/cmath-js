@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "1.4.6",
+	"version": "1.4.7",
 	"exports": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
@@ -71,7 +71,7 @@
 		"prepack": "npm run build",
 		"test": "jest",
 		"test-with-typechecking": "jest --config=jest.config.with-typechecking.js",
-		"typecheck": "tsc --project tsconfig.json --noEmit",
+		"typecheck": "tsc --noEmit",
 		"verify": "npm run test-with-typechecking --ci && npm run lint && npm run typecheck"
 	},
 	"files": [
