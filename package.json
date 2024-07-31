@@ -54,7 +54,7 @@
 		"@swc/jest": "^0.2",
 		"@types/eslint__js": "^8.42.3",
 		"@types/jest": "^29",
-		"@types/node": "^20",
+		"@types/node": "^22",
 		"eslint": "^9",
 		"eslint-config-prettier": "^9",
 		"eslint-plugin-prettier": "^5",
