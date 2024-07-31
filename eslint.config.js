@@ -50,6 +50,7 @@ export default tseslint.config(
 			"sort-vars": "warn",
 		},
 	},
+	// @ts-ignore: `exactOptionalPropertyTypes: true` incompatibility
 	eslintPluginPrettierRecommended,
 	{
 		rules: {
