@@ -19,7 +19,11 @@ These functions accept either a `bigint` or an integer `number`:
 - [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one)
 - [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero)
 - [`div`](https://en.cppreference.com/w/cpp/numeric/math/div)
-- [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd)
+- [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd). Example:
+	```ts
+	import { gcd } from "cmath-js";
+	console.log(`The greatest common divisor of 24 and 32 is ${gcd(24, 32)}.`);
+	```
 - [`lcm`](https://en.cppreference.com/w/cpp/numeric/lcm)
 - [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
 
@@ -28,7 +32,11 @@ These functions accept either a `bigint` or an integer `number`:
 - [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
 
 ## Mathematical constants
-- Constants in [the `std::numbers` namespace](https://en.cppreference.com/w/cpp/numeric/constants)
+- Constants in [the `std::numbers` namespace](https://en.cppreference.com/w/cpp/numeric/constants) are available from the `numbers.js` subpath export. Example:
+	```ts
+	import { sqrt3 } from "cmath-js/numbers.js";
+	console.log(`The square root of 3 is ${sqrt3}.`);
+	```
 
 ## Test coverage
 The test coverage is a perfect 100% and enforced by the publishing and pull request verification workflows.
