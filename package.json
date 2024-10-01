@@ -5,9 +5,17 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "1.4.8",
-	"exports": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"version": "2.0.0",
+	"exports": {
+		".": {
+			"default": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./numbers.js": {
+			"default": "./dist/numbers.js",
+			"types": "./dist/numbers.d.js"
+		}
+	},
 	"type": "module",
 	"author": "Oskar Larsson Högfeldt <oskar@oskar.pm>",
 	"contributors": [
@@ -49,7 +57,6 @@
 		"TypeScript"
 	],
 	"devDependencies": {
-		"@swc/cli": "^0.4",
 		"@swc/core": "^1",
 		"@swc/jest": "^0.2",
 		"@types/eslint__js": "^8.42.3",
@@ -61,8 +68,8 @@
 		"jest": "^29",
 		"prettier": "^3",
 		"ts-jest": "^29",
-		"typescript": "~5.5",
-		"typescript-eslint": "^8.0.0-alpha.39"
+		"typescript": "~5.6",
+		"typescript-eslint": "^8.8.0"
 	},
 	"scripts": {
 		"build": "tsc --project tsconfig.build.json",

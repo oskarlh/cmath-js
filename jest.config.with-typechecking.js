@@ -8,10 +8,10 @@ export default {
 	coverageReporters: ["text"],
 	coverageThreshold: {
 		global: {
-			branches: 5,
-			functions: 5,
-			lines: 5,
-			statements: 5,
+			branches: 100,
+			functions: 100,
+			lines: 100,
+			statements: 100,
 		},
 	},
 	preset: "ts-jest/presets/default-esm",
