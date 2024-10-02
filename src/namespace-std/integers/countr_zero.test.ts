@@ -83,6 +83,7 @@ describe(countr_zero.name, () => {
 
 	it("counts non-integers and negative numbers as 0", () => {
 		const invalid = [
+			1.8,
 			NaN,
 			-1,
 			-1n,

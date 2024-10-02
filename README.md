@@ -15,13 +15,21 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 These functions accept either a `bigint` or an integer `number`:
 - [`abs`](https://en.cppreference.com/w/c/numeric/math/abs)
 - [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one)
-- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero)
+- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero) in the form of
+	```ts
+	import { create_countl_zero } from "cmath-js";
+	const countl_zero_u16 = create_countl_zero({ bits: 16 });
+	const integer = 0x0FFF;
+	// Prints "0000111111111111 has 4 leading zero bits."
+	console.log(`${integer.toString(2).padStart(16, "0")} has ${countl_zero_u16(integer)} leading zero bits.`);
+	```
 - [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one)
 - [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero)
 - [`div`](https://en.cppreference.com/w/cpp/numeric/math/div)
 - [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd). Example:
 	```ts
 	import { gcd } from "cmath-js";
+	// Prints "The greatest common divisor of 24 and 32 is 8."
 	console.log(`The greatest common divisor of 24 and 32 is ${gcd(24, 32)}.`);
 	```
 - [`lcm`](https://en.cppreference.com/w/cpp/numeric/lcm)

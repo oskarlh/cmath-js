@@ -29,49 +29,9 @@ describe(countr_one.name, () => {
 		expect(countr_one(0x1_ff_ff_f2_ff_0f_ff_ff_ffn)).toStrictEqual(28);
 	});
 
-	it("accepts an optional integer size", () => {
-		expect(countr_one(0, 0b0)).toStrictEqual(0);
-		expect(countr_one(0, 0b1)).toStrictEqual(0);
-
-		expect(countr_one(0, 0b0n)).toStrictEqual(0);
-		expect(countr_one(0, 0b1n)).toStrictEqual(0);
-
-		expect(countr_one(1, 0b0)).toStrictEqual(0);
-		expect(countr_one(1, 0b1)).toStrictEqual(1);
-		expect(countr_one(1, 0b10)).toStrictEqual(0);
-		expect(countr_one(1, 0b100)).toStrictEqual(0);
-		expect(countr_one(1, 0b1110)).toStrictEqual(0);
-
-		expect(countr_one(1, 0b0n)).toStrictEqual(0);
-		expect(countr_one(1, 0b1n)).toStrictEqual(1);
-		expect(countr_one(1, 0b10n)).toStrictEqual(0);
-		expect(countr_one(1, 0b100n)).toStrictEqual(0);
-		expect(countr_one(1, 0b1110n)).toStrictEqual(0);
-
-		expect(countr_one(2, 0b00)).toStrictEqual(0);
-		expect(countr_one(2, 0b01)).toStrictEqual(1);
-		expect(countr_one(2, 0b10)).toStrictEqual(0);
-		expect(countr_one(2, 0b100)).toStrictEqual(0);
-		expect(countr_one(2, 0b1110)).toStrictEqual(0);
-		expect(countr_one(2, 0b1111n)).toStrictEqual(2);
-
-		expect(countr_one(2, 0b00n)).toStrictEqual(0);
-		expect(countr_one(2, 0b01n)).toStrictEqual(1);
-		expect(countr_one(2, 0b10n)).toStrictEqual(0);
-		expect(countr_one(2, 0b100n)).toStrictEqual(0);
-		expect(countr_one(2, 0b1110n)).toStrictEqual(0);
-		expect(countr_one(2, 0b1111n)).toStrictEqual(2);
-
-		expect(countr_one(12, 0xff_ff_ff_ff_ff_ff)).toStrictEqual(12);
-
-		expect(countr_one(12, 0xff_ff_ff_ff_ff_ffn)).toStrictEqual(12);
-		expect(countr_one(65, 0x1_ff_ff_ff_ff_ff_ff_ff_ffn)).toStrictEqual(65);
-		expect(countr_one(66, 0x1_ff_ff_ff_ff_ff_ff_ff_ffn)).toStrictEqual(65);
-		expect(countr_one(65, 0xff_ff_ff_ff_f0_ff_ff_ffn)).toStrictEqual(24);
-	});
-
 	it("counts non-integers and negative numbers as 0", () => {
 		const invalid = [
+			1.8,
 			NaN,
 			-1,
 			-1n,
@@ -83,14 +43,6 @@ describe(countr_one.name, () => {
 		];
 		for (const inv of invalid) {
 			expect(countr_one(inv)).toStrictEqual(0);
-
-			expect(countr_one(0, inv)).toStrictEqual(0);
-			expect(countr_one(1, inv)).toStrictEqual(0);
-			expect(countr_one(2, inv)).toStrictEqual(0);
-			if (typeof inv === "number") {
-				expect(countr_one(inv, inv)).toStrictEqual(0);
-				expect(countr_one(inv, 0b11111)).toStrictEqual(0);
-			}
 		}
 	});
 });

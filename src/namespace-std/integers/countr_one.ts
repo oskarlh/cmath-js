@@ -1,16 +1,25 @@
-import { bitsInUnsignedInteger } from "../../internal/index.js";
+import { sanitizeUnsignedInteger } from "../../internal/sanitizeUnsignedInteger.js";
 
-// Count trailing 1 bits
-// Cppreference: https://en.cppreference.com/w/cpp/numeric/countr_one
-// The one-parameter version starts counting at the position of the most significant set bit.
-// The two-parameter version starts counting at the bit with the index (fixedIntegerSizeInBits - 1),
-// so countr_one(3, 0b011) === 2, countr_one(3, 0b111) === 3, and countr_one(3, 0b111111) == 3.
-// If the integer length is 0, 0 is returned.
-export function countr_one(fixedIntegerSizeInBits: number, integer: bigint | number): number;
-export function countr_one(integer: bigint | number): number;
-export function countr_one(
-	...values: [fixedIntegerSizeInBits: number, integer: bigint | number] | [integer: bigint | number]
-): number {
-	const digits = bitsInUnsignedInteger(values);
-	return digits.length - digits.lastIndexOf(0) - 1;
+/**
+ * Counts consecutive 1 bits in an unsigned integer, starting with the least significant bit.
+ *
+ * Read more about the original function on
+ * - {@link https://en.cppreference.com/w/cpp/numeric/countr_one|Cppreference}
+ *
+ * @example
+ * // Returns 4
+ * countr_one(0b10101111)
+ * @example
+ * // Returns 2
+ * countr_one(0b11n)
+ * @example
+ * // Returns 0
+ * countr_one(0b10)
+ * @example
+ * // Returns 0
+ * countr_one(0b0)
+ */
+export function countr_one(integer: bigint | number): number {
+	const digits = sanitizeUnsignedInteger(integer).toString(2);
+	return digits.length - digits.lastIndexOf("0") - 1;
 }
