@@ -1,4 +1,4 @@
-import { gcd } from "./index.js";
+import { gcd } from "../index.js";
 
 describe(gcd.name, () => {
 	it("finds the greatest common divisor", () => {
