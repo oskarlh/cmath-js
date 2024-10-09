@@ -49,6 +49,8 @@ describe(create_countl_zero.name, () => {
 		expect(countl_zero_u32(0b0)).toStrictEqual(32);
 		expect(countl_zero_u32(0xff_ff_ff_ff)).toStrictEqual(0);
 		expect(countl_zero_u32(0xff_ff_ff_fe)).toStrictEqual(0);
+		expect(countl_zero_u32(-1)).toStrictEqual(0);
+		expect(countl_zero_u32(-2n)).toStrictEqual(0);
 		expect(countl_zero_u32(0x7f_ff_ff_ff)).toStrictEqual(1);
 		expect(countl_zero_u32(0x00_00_00_01)).toStrictEqual(31);
 

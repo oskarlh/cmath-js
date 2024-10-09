@@ -30,11 +30,15 @@ export function create_countr_zero({ bits }: { bits: number }): countr_zero_func
 			const truncated =
 				(typeof integer === "number" ? integer : Number(BigInt.asIntN(32, integer))) & mask;
 
+			if (truncated === 0) {
+				return bits;
+			}
+
 			// Turn the trailing 0s - plus the bit just to the left of them - to 1s, and the rest of the bits to 0s.
 			const zeroesAsOnes = truncated ^ (truncated - 1);
 
 			const trailLength = 31 - Math.clz32(zeroesAsOnes);
-			return truncated === 0 ? bits : trailLength;
+			return trailLength;
 		};
 	}
 
