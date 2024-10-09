@@ -1,4 +1,4 @@
-import { lcm } from "./index.js";
+import { lcm } from "../index.js";
 
 describe(lcm.name, () => {
 	it("finds the least common multiple", () => {
@@ -40,7 +40,7 @@ describe(lcm.name, () => {
 		}
 	});
 
-	it(`returns 0 if at least one of the arguments are 0`, () => {
+	it("returns 0 if at least one of the arguments are 0", () => {
 		expect(lcm(0, 0)).toStrictEqual(0);
 		expect(lcm(-0, -0)).toStrictEqual(0);
 		expect(lcm(-4, 0)).toStrictEqual(0);
@@ -50,7 +50,7 @@ describe(lcm.name, () => {
 		expect(lcm(0n, 4n)).toStrictEqual(0n);
 	});
 
-	it(`returns 0 if one or both parameters are non-integers`, () => {
+	it("returns 0 if one or both parameters are non-integers", () => {
 		expect(lcm(9, 4.5)).toStrictEqual(0);
 		expect(lcm(4.5, Infinity)).toStrictEqual(0);
 		expect(lcm(-Infinity, 4)).toStrictEqual(0);

@@ -1,24 +1,36 @@
 import { floatFromBits } from "../../internal/index.js";
 
-// Converts the string arg into the corresponding quiet NaN value.
-// https://en.cppreference.com/w/cpp/numeric/math/nan
-// This is always true: Object.is(nan(<any string>), NaN).
-// Important note: JavaScript engines do not have to keep the NaN value
-// and at the time of writing (2024) at least one engine (Firefox's) only
-// supports two different NaNs (+NaN and -NaN), so in Firefox this function
-// will always return the exact same NaN. Chrome's JS engine supports all
-// possible NaN values, though, which can be observed like this:
-// (
-//   new Uint8Array(new Float64Array([nan("0")]).buffer)[0] === 0 &&
-//   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
-// )
-
+/**
+ * Converts the string argument into the corresponding quiet NaN value.
+ *
+ * The accepted format is not defined in the C23 standard, except that
+ * if a character other than [0-9a-zA-Z_] appears, the argument is ignored.
+ * This implementation accepts simple decimal and hexadecimal integer strings
+ * like `"1234"` or `"0xF00D"`.
+ *
+ * The following is always `true`:
+ * ```ts
+ * Object.is(nan(<any string>), NaN)
+ * ```
+ *
+ * Important note: JavaScript engines do not have to keep the NaN value
+ * and at the time of writing (2024) at least one engine (Firefox's) only
+ * supports two different NaNs (+NaN and -NaN), so in Firefox this function
+ * will always return the exact same NaN. Chrome's JS engine supports all
+ * possible NaN values, though, which can be observed like this:
+ * ```ts
+ * (
+ *   new Uint8Array(new Float64Array([nan("0")]).buffer)[0] === 0 &&
+ *   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
+ * )
+ * ```
+ *
+ * Read more about the original function on
+ * - {@link https://en.cppreference.com/w/cpp/numeric/math/nan|Cppreference}
+ */
 export function nan(arg: string): number {
 	let bits = 0n;
 
-	// The accepted format is not defined in the C23 standard, except that
-	// if a character other than [0-9a-zA-Z_] appears, the argument is ignored.
-	// So let's just accept simple decimal and hexadecimal integers.
 	const isIntegerString = /^(0|[1-9]\d*|0x[0-9a-zA-Z]+)$/.test(arg);
 
 	if (isIntegerString) {
