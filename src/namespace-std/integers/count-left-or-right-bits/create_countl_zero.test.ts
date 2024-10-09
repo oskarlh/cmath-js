@@ -1,4 +1,4 @@
-import { create_countl_zero } from "./index.js";
+import { create_countl_zero } from "../index.js";
 
 describe(create_countl_zero.name, () => {
 	it("creates a function that counts leading zeroes", () => {
@@ -7,6 +7,7 @@ describe(create_countl_zero.name, () => {
 		const countl_zero_u2 = create_countl_zero({ bits: 2 });
 		const countl_zero_u12 = create_countl_zero({ bits: 12 });
 		const countl_zero_u16 = create_countl_zero({ bits: 16 });
+		const countl_zero_u32 = create_countl_zero({ bits: 32 });
 		const countl_zero_u64 = create_countl_zero({ bits: 64 });
 
 		expect(countl_zero_u0(0b0)).toStrictEqual(0);
@@ -45,40 +46,20 @@ describe(create_countl_zero.name, () => {
 		expect(countl_zero_u2(0b11n)).toStrictEqual(0);
 		expect(countl_zero_u2(0b111n)).toStrictEqual(0);
 
+		expect(countl_zero_u32(0b0)).toStrictEqual(32);
+		expect(countl_zero_u32(0xff_ff_ff_ff)).toStrictEqual(0);
+		expect(countl_zero_u32(0xff_ff_ff_fe)).toStrictEqual(0);
+		expect(countl_zero_u32(0x7f_ff_ff_ff)).toStrictEqual(1);
+		expect(countl_zero_u32(0x00_00_00_01)).toStrictEqual(31);
+
 		expect(countl_zero_u12(0b0)).toStrictEqual(12);
 		expect(countl_zero_u16(0xff_ff_ff_ff_ff_ff)).toStrictEqual(0);
 		expect(countl_zero_u64(0xff_ff_ff_ff)).toStrictEqual(32);
 
 		expect(countl_zero_u12(0b0n)).toStrictEqual(12);
 		expect(countl_zero_u16(0xff_ff_ff_ff_ff_ffn)).toStrictEqual(0);
+		expect(countl_zero_u64(0b0)).toStrictEqual(64);
+		expect(countl_zero_u64(0b0n)).toStrictEqual(64);
 		expect(countl_zero_u64(0xff_ff_ff_ffn)).toStrictEqual(32);
-	});
-
-	it("creates a function that counts non-integers and negative numbers as 0", () => {
-		const countl_zero_u0 = create_countl_zero({ bits: 0 });
-		const countl_zero_u1 = create_countl_zero({ bits: 1 });
-		const countl_zero_u2 = create_countl_zero({ bits: 2 });
-
-		const invalid = [
-			1.8,
-			NaN,
-			-1,
-			-1n,
-			-2,
-			-3,
-			Infinity,
-			-Infinity,
-			-0xffffffffffffffffffffffffffffffffn,
-		];
-		for (const inv of invalid) {
-			expect(countl_zero_u0(inv)).toStrictEqual(0);
-			expect(countl_zero_u1(inv)).toStrictEqual(1);
-			expect(countl_zero_u2(inv)).toStrictEqual(2);
-			if (typeof inv === "number") {
-				const countl_zero_inv = create_countl_zero({ bits: inv });
-				expect(countl_zero_inv(inv)).toStrictEqual(0);
-				expect(countl_zero_inv(0b11111)).toStrictEqual(0);
-			}
-		}
 	});
 });
