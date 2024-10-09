@@ -14,17 +14,17 @@ Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScri
 ## Integer functions
 These functions accept either a `bigint` or an integer `number`:
 - [`abs`](https://en.cppreference.com/w/c/numeric/math/abs)
-- [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one)
-- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero) in the form of
+- [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one) as `create_countl_one`, which is used this way:
 	```ts
-	import { create_countl_zero } from "cmath-js";
-	const countl_zero_u16 = create_countl_zero({ bits: 16 });
-	const integer = 0x0FFF;
-	// Prints "0000111111111111 has 4 leading zero bits."
-	console.log(`${integer.toString(2).padStart(16, "0")} has ${countl_zero_u16(integer)} leading zero bits.`);
+	import { create_countl_one } from "cmath-js";
+	const countl_one_u16 = create_countl_one({ bits: 16 });
+	const integer = 0xF0_00;
+	// Prints "1111000000000000 has 4 leading zero bits."
+	console.log(`${integer.toString(2).padStart(16, "0")} has ${countl_one_u16(integer)} leading one bits.`);
 	```
-- [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one)
-- [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero)
+- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero) as `create_countl_zero`
+- [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one) as `create_countr_one`
+- [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero) as `create_countr_zero`
 - [`div`](https://en.cppreference.com/w/cpp/numeric/math/div)
 - [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd). Example:
 	```ts
