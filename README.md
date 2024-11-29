@@ -1,5 +1,5 @@
 # cmath-js
-Implementation of parts of C's & C++'s numerics libraries in TypeScript/JavaScript.
+Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, including functions C++ inherits from C.
 
 ## Floating-point functions
 - [`copysign`](https://en.cppreference.com/w/c/numeric/math/copysign)
@@ -50,6 +50,6 @@ These functions accept either a `bigint` or an integer `number`:
 The test coverage is a perfect 100% and enforced by the publishing and pull request verification workflows.
 
 ## Contributing
-Contributions are welcomed! Feel free to make a pull request. Please add your name to `contributors` in `package.json` and run `npm run build-and-verify` before submitting your PR. By making a pull request you agree to license your contribution under [the CC0 license](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en#legal-code-title) unless otherwise specified.
+Contributions are welcomed! Feel free to make a pull request. Please add your name to `contributors` in `package.json` and run `npm run build-and-verify` before submitting your PR. By opening a pull request you agree to license your contribution under [the CC0 license](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en#legal-code-title) unless you specify otherwise.
 
-ESLint is used to enforce code quality and consistent formatting (with the help of Prettier). If ESLint complains when you run `npm run build-and-verify`, you can run `npm run lint-fix` to apply automatic fixes and then fix the rest of the errors manually. I recommend configuring your IDE for ESLint and Prettier. If you are using Visual Studio Code, simply installing [Microsoft's ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [the official Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) takes care of that.
+ESLint is used to enforce code quality and consistent formatting (with the help of Prettier). If ESLint complains when you run `npm run build-and-verify`, you can run `npm run lint-fix` to apply automatic fixes, and then fix the rest of the errors manually. It is recommend to configure your IDE for ESLint and Prettier. If you are using Visual Studio Code, simply installing [Microsoft's ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [the official Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) takes care of that.

@@ -1,4 +1,4 @@
-import { gcd_number } from "./gcd_number.js";
+import { gcd_number } from "../gcd/index.js";
 
 export function lcm_number(aInteger: number, bInteger: number): number {
 	if (!Number.isSafeInteger(aInteger) || !Number.isSafeInteger(bInteger)) {

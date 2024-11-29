@@ -60,6 +60,8 @@ describe(create_countr_zero.name, () => {
 		expect(countr_zero_u32(0xff_ff_ff_fe)).toStrictEqual(1);
 		expect(countr_zero_u32(0x7f_ff_ff_ff)).toStrictEqual(0);
 		expect(countr_zero_u32(0x80_00_00_00)).toStrictEqual(31);
+		expect(countr_zero_u32(-1)).toStrictEqual(0);
+		expect(countr_zero_u32(-2n)).toStrictEqual(1);
 
 		expect(countr_zero_u64(0x0)).toStrictEqual(64);
 		expect(countr_zero_u64(0x0n)).toStrictEqual(64);
