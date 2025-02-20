@@ -19,7 +19,7 @@ These functions accept either a `bigint` or an integer `number`:
 	import { create_countl_one } from "cmath-js";
 	const countl_one_u16 = create_countl_one({ bits: 16 });
 	const integer = 0xF0_00;
-	// Prints "1111000000000000 has 4 leading zero bits."
+	// Prints "1111000000000000 has 4 leading one bits."
 	console.log(`${integer.toString(2).padStart(16, "0")} has ${countl_one_u16(integer)} leading one bits.`);
 	```
 - [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero) as `create_countl_zero`
