@@ -1,6 +1,9 @@
-// Fills an array with sequentially increasing values
-// Cppreference: https://en.cppreference.com/w/c/numeric/math/iota
-
+/**
+ * Fills an array with sequentially increasing values
+ *
+ * Read more about the original function on
+ * - {@link https://en.cppreference.com/w/c/numeric/math/iota|Cppreference}
+ */
 export function iota(mut_arrayToFill: bigint[], startValue: bigint): void;
 export function iota(mut_arrayToFill: number[], startValue: number): void;
 export function iota(mut_arrayToFill: (bigint | number)[], startValue: bigint | number): void {
