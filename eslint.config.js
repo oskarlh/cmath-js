@@ -59,5 +59,12 @@ export default defineConfig(
 			"sort-vars": "warn",
 		},
 	},
+	{
+		files: ["src/**/*.test.ts"],
+		rules: {
+			// For Chai, to allow `expect(abs(NaN)).to.be.NaN;` in tests
+			"@typescript-eslint/no-unused-expressions": "off",
+		},
+	},
 	eslintConfigPrettier,
 );

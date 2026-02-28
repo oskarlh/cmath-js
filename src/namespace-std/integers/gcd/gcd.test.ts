@@ -1,4 +1,6 @@
-import { gcd } from "../index.js";
+import { describe, it } from "node:test";
+import { gcd } from "../index.ts";
+import { expect } from "chai";
 
 describe(gcd.name, () => {
 	it("finds the greatest common divisor", () => {
@@ -40,44 +42,44 @@ describe(gcd.name, () => {
 			},
 		] as const;
 		for (const { a, b, expectedDivisor } of values) {
-			expect(gcd(a, b)).toStrictEqual(expectedDivisor);
-			expect(gcd(b, a)).toStrictEqual(expectedDivisor);
-			expect(gcd(-a, b)).toStrictEqual(expectedDivisor);
-			expect(gcd(a, -b)).toStrictEqual(expectedDivisor);
-			expect(gcd(-a, -b)).toStrictEqual(expectedDivisor);
+			expect(gcd(a, b)).to.equal(expectedDivisor);
+			expect(gcd(b, a)).to.equal(expectedDivisor);
+			expect(gcd(-a, b)).to.equal(expectedDivisor);
+			expect(gcd(a, -b)).to.equal(expectedDivisor);
+			expect(gcd(-a, -b)).to.equal(expectedDivisor);
 			const bigA = BigInt(a);
 			const bigB = BigInt(b);
-			expect(gcd(bigA, bigB)).toStrictEqual(BigInt(expectedDivisor));
-			expect(gcd(bigB, bigA)).toStrictEqual(BigInt(expectedDivisor));
-			expect(gcd(-bigA, bigB)).toStrictEqual(BigInt(expectedDivisor));
-			expect(gcd(bigA, -bigB)).toStrictEqual(BigInt(expectedDivisor));
-			expect(gcd(-bigB, -bigA)).toStrictEqual(BigInt(expectedDivisor));
+			expect(gcd(bigA, bigB)).to.equal(BigInt(expectedDivisor));
+			expect(gcd(bigB, bigA)).to.equal(BigInt(expectedDivisor));
+			expect(gcd(-bigA, bigB)).to.equal(BigInt(expectedDivisor));
+			expect(gcd(bigA, -bigB)).to.equal(BigInt(expectedDivisor));
+			expect(gcd(-bigB, -bigA)).to.equal(BigInt(expectedDivisor));
 		}
 	});
 
 	it(`returns 0 for ${gcd.name}(0, 0)`, () => {
-		expect(gcd(0, 0)).toStrictEqual(0);
-		expect(gcd(-0, -0)).toStrictEqual(0);
-		expect(gcd(-0, 0)).toStrictEqual(0);
-		expect(gcd(0, -0)).toStrictEqual(0);
-		expect(gcd(0n, 0n)).toStrictEqual(0n);
+		expect(gcd(0, 0)).to.equal(0);
+		expect(gcd(-0, -0)).to.equal(0);
+		expect(gcd(-0, 0)).to.equal(0);
+		expect(gcd(0, -0)).to.equal(0);
+		expect(gcd(0n, 0n)).to.equal(0n);
 	});
 
 	it(`returns a for ${gcd.name}(a, 0) and returns b for ${gcd.name}(0, b)`, () => {
-		expect(gcd(4, 0)).toStrictEqual(4);
-		expect(gcd(4n, 0n)).toStrictEqual(4n);
+		expect(gcd(4, 0)).to.equal(4);
+		expect(gcd(4n, 0n)).to.equal(4n);
 
-		expect(gcd(0, 4)).toStrictEqual(4);
-		expect(gcd(-0, 4)).toStrictEqual(4);
-		expect(gcd(0n, 4n)).toStrictEqual(4n);
+		expect(gcd(0, 4)).to.equal(4);
+		expect(gcd(-0, 4)).to.equal(4);
+		expect(gcd(0n, 4n)).to.equal(4n);
 	});
 
 	it(`returns 0 if one or both parameters are non-integers`, () => {
-		expect(gcd(9, 4.5)).toStrictEqual(0);
-		expect(gcd(4.5, Infinity)).toStrictEqual(0);
-		expect(gcd(-Infinity, 4)).toStrictEqual(0);
-		expect(gcd(NaN, 4)).toStrictEqual(0);
-		expect(gcd(NaN, NaN)).toStrictEqual(0);
-		expect(gcd(4, Number.MAX_SAFE_INTEGER + 1)).toStrictEqual(0);
+		expect(gcd(9, 4.5)).to.equal(0);
+		expect(gcd(4.5, Infinity)).to.equal(0);
+		expect(gcd(-Infinity, 4)).to.equal(0);
+		expect(gcd(NaN, 4)).to.equal(0);
+		expect(gcd(NaN, NaN)).to.equal(0);
+		expect(gcd(4, Number.MAX_SAFE_INTEGER + 1)).to.equal(0);
 	});
 });

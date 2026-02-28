@@ -1,2 +1,2 @@
-export { floatFromBits } from "./floatFromBits.js";
-export { floatOctets } from "./floatOctets.js";
+export { floatFromBits } from "./floatFromBits.ts";
+export { floatOctets } from "./floatOctets.ts";

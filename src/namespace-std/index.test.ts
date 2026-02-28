@@ -1,8 +1,10 @@
-import { abs, frexp } from "./index.js";
+import { describe, it } from "node:test";
+import { abs, frexp } from "./index.ts";
+import { expect } from "chai";
 
 describe("Exports", () => {
 	it("are exported", () => {
-		expect(typeof abs).toStrictEqual("function");
-		expect(typeof frexp).toStrictEqual("function");
+		expect(abs).to.be.a("function");
+		expect(frexp).to.be.a("function");
 	});
 });

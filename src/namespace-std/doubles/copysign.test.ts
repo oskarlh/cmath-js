@@ -1,15 +1,17 @@
-import { signbit } from "../index.js";
-import { copysign } from "./index.js";
+import { expect } from "chai";
+import { signbit } from "../index.ts";
+import { copysign } from "./index.ts";
+import { describe, it } from "node:test";
 
 describe(copysign.name, () => {
 	it("return a number with the sign from another number", () => {
-		expect(copysign(-8, 4)).toBe(8);
-		expect(copysign(-0, 4)).toBe(0);
-		expect(copysign(-0, -4)).toBe(-0);
-		expect(copysign(8, -0)).toBe(-8);
-		expect(copysign(8, -4)).toBe(-8);
-		expect(copysign(-8, -0.00000000000000000000001)).toBe(-8);
-		expect(copysign(-Infinity, 0.00000000000000000000001)).toBe(Infinity);
+		expect(copysign(-8, 4)).to.equal(8);
+		expect(copysign(-0, 4)).to.equal(0);
+		expect(copysign(-0, -4)).to.equal(-0);
+		expect(copysign(8, -0)).to.equal(-8);
+		expect(copysign(8, -4)).to.equal(-8);
+		expect(copysign(-8, -0.00000000000000000000001)).to.equal(-8);
+		expect(copysign(-Infinity, 0.00000000000000000000001)).to.equal(Infinity);
 	});
 
 	it("handles NaNs", () => {
@@ -19,16 +21,16 @@ describe(copysign.name, () => {
 		const negativeA = copysign(NaN, -100);
 		const negativeB = copysign(-NaN, -100);
 
-		expect(positiveA).toBeNaN();
-		expect(positiveB).toBeNaN();
+		expect(positiveA).to.be.NaN;
+		expect(positiveB).to.be.NaN;
 
-		expect(negativeA).toBeNaN();
-		expect(negativeB).toBeNaN();
+		expect(negativeA).to.be.NaN;
+		expect(negativeB).to.be.NaN;
 
-		expect(signbit(positiveA)).toBe(signbit(NaN));
-		expect(signbit(positiveB)).toBe(signbit(NaN));
+		expect(signbit(positiveA)).to.equal(signbit(NaN));
+		expect(signbit(positiveB)).to.equal(signbit(NaN));
 
-		expect(signbit(negativeA)).toBe(signbit(-NaN));
-		expect(signbit(negativeB)).toBe(signbit(-NaN));
+		expect(signbit(negativeA)).to.equal(signbit(-NaN));
+		expect(signbit(negativeB)).to.equal(signbit(-NaN));
 	});
 });

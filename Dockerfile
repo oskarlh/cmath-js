@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 
-FROM node:24-alpine as pre-build
+FROM node:lts-alpine AS pre-build
 WORKDIR /app
-COPY *.config.js .prettier* LICENSE README.md jest.* package.json package-lock.json tsconfig.json tsconfig.*.json ./
+COPY *.config.js .prettier* LICENSE README.md package.json package-lock.json tsconfig.json tsconfig.*.json ./
 RUN NODE_ENV=development npm install
 COPY src ./src
 

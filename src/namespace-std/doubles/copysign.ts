@@ -1,4 +1,4 @@
-import { signbit } from "../index.js";
+import { signbit } from "../index.ts";
 
 /**
  * Produces a value with the magnitude of 'num' and the sign 'sign'.

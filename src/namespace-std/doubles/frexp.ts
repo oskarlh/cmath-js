@@ -48,11 +48,13 @@ export function frexp(num: number): FrexpResult {
 		--exponent;
 	}
 
-	// istanbul ignore next - This might never run and that's okay. See the above comment
+	// This might never run and that's okay. See the comment above
+	/* node:coverage disable */
 	while (fraction >= 1) {
 		fraction *= 0.5;
 		++exponent;
 	}
+	/* node:coverage enable */
 
 	if (num < 0) {
 		fraction = -fraction;

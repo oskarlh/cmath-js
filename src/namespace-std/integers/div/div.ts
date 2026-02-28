@@ -1,5 +1,5 @@
-import { div_bigint, type div_t_bigint } from "./div_bigint.js";
-import { div_number, type div_t_number } from "./div_number.js";
+import { div_bigint, type div_t_bigint } from "./div_bigint.ts";
+import { div_number, type div_t_number } from "./div_number.ts";
 
 type AnyInteger = bigint | number;
 

@@ -1,1 +1,1 @@
-export * from "./namespace-std/index.js";
+export * from "./namespace-std/index.ts";

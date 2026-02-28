@@ -1,11 +1,13 @@
-import * as numbers from "./index.js";
+import { expect } from "chai";
+import { describe, it } from "node:test";
+import * as numbers from "./index.ts";
 
 describe("std::number mathematical constants", () => {
 	it("are defined", () => {
-		expect(Object.keys(numbers).length).toBeGreaterThan(10);
+		expect(Object.keys(numbers).length).to.be.greaterThan(10);
 
 		for (const constantName in numbers) {
-			expect(typeof numbers[constantName as keyof typeof numbers]).toBe("number");
+			expect(numbers[constantName as keyof typeof numbers]).to.be.a("number");
 		}
 	});
 });

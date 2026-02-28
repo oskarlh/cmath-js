@@ -4,8 +4,8 @@
 // If one of the parameters is zero, the absolute value of the other parameter is returned
 // Expects safe integers (bigints or numbers for which Number.isSafeInteger() returns true)
 
-import { gcd_bigint } from "./gcd_bigint.js";
-import { gcd_number } from "./gcd_number.js";
+import { gcd_bigint } from "./gcd_bigint.ts";
+import { gcd_number } from "./gcd_number.ts";
 
 export function gcd(aInteger: bigint, bInteger: bigint): bigint;
 export function gcd(aInteger: number, bInteger: number): number;
