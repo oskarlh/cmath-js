@@ -5,15 +5,15 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"exports": {
 		".": {
-			"default": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
 		},
 		"./numbers": {
-			"default": "./dist/numbers.js",
-			"types": "./dist/numbers.d.js"
+			"types": "./dist/numbers.d.js",
+			"default": "./dist/numbers.js"
 		}
 	},
 	"type": "module",
