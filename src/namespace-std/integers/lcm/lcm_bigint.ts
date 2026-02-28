@@ -1,4 +1,4 @@
-import { gcd_bigint } from "../gcd/gcd_bigint.js";
+import { gcd_bigint } from "../gcd/gcd_bigint.ts";
 
 export function lcm_bigint(aInteger: bigint, bInteger: bigint): bigint {
 	const a = aInteger < 0n ? -aInteger : aInteger;

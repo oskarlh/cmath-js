@@ -1,13 +1,13 @@
 // @ts-check
 
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
-	{
-		ignores: ["dist/**", "dist-pack", "node_modules", "tmp"],
-	},
+export default defineConfig(
+	{ files: ["src/"] },
+	{ ignores: ["dist/", "dist-pack/", "tmp/"] },
 	{
 		languageOptions: {
 			globals: {
@@ -20,8 +20,8 @@ export default tseslint.config(
 		},
 	},
 	eslint.configs.recommended,
-	...tseslint.configs.strictTypeChecked,
-	...tseslint.configs.stylisticTypeChecked,
+	tseslint.configs.strict,
+	tseslint.configs.stylistic,
 	{
 		rules: {
 			"@typescript-eslint/ban-ts-comment": "off",
@@ -33,7 +33,16 @@ export default tseslint.config(
 					allowConstantLoopConditions: true,
 				},
 			],
-			"@typescript-eslint/no-unused-vars": "off",
+			"@typescript-eslint/no-unused-vars": [
+				"error",
+				{
+					argsIgnorePattern: "^_",
+					caughtErrorsIgnorePattern: "^_",
+					destructuredArrayIgnorePattern: "^_",
+					ignoreRestSiblings: true,
+					varsIgnorePattern: "^_",
+				},
+			],
 			"@typescript-eslint/restrict-template-expressions": ["off"],
 			curly: ["warn", "multi-line"],
 			"no-constant-condition": ["error", { checkLoops: false }],
@@ -50,11 +59,12 @@ export default tseslint.config(
 			"sort-vars": "warn",
 		},
 	},
-	// @ts-ignore: `exactOptionalPropertyTypes: true` incompatibility
-	eslintPluginPrettierRecommended,
 	{
+		files: ["src/**/*.test.ts"],
 		rules: {
-			"prettier/prettier": "warn",
+			// For Chai, to allow `expect(abs(NaN)).to.be.NaN;` in tests
+			"@typescript-eslint/no-unused-expressions": "off",
 		},
 	},
+	eslintConfigPrettier,
 );

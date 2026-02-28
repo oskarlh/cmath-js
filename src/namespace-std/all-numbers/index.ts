@@ -1,2 +1,2 @@
-export { iota } from "./iota.js";
-export { signbit } from "./signbit.js";
+export { iota } from "./iota.ts";
+export { signbit } from "./signbit.ts";

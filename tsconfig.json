@@ -11,7 +11,7 @@
 		// "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
 
 		/* Language and Environment */
-		"target": "ESNEXT", //                                  Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
+		"target": "esnext", //                                  Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
 		// "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
 		// "jsx": "preserve",                                /* Specify what JSX code is generated. */
 		// "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
@@ -21,12 +21,13 @@
 		// "jsxImportSource": "",                            /* Specify module specifier used to import the JSX factory functions when using `jsx: react-jsx*`.` */
 		// "reactNamespace": "",                             /* Specify the object invoked for `createElement`. This only applies when targeting `react` JSX emit. */
 		// "noLib": true,                                    /* Disable including any library files, including the default lib.d.ts. */
+		"rewriteRelativeImportExtensions": true,
 		// "useDefineForClassFields": true,                  /* Emit ECMAScript-standard-compliant class fields. */
 
 		/* Modules */
-		"module": "NodeNext", //                                Specify what module code is generated.
-		"rootDir": ".", //                                  Specify the root folder within your source files.
-		"moduleResolution": "NodeNext", //                          Specify how TypeScript looks up a file from a given module specifier.
+		"module": "nodenext", //                                Specify what module code is generated.
+		// "rootDir": "./src", //                                  Specify the root folder within your source files.
+		"moduleResolution": "nodenext", //                          Specify how TypeScript looks up a file from a given module specifier.
 		// "baseUrl": "./src", //                               Specify the base directory to resolve non-relative module names.
 		// "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
 		// "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
@@ -38,7 +39,7 @@
 
 		/* JavaScript Support */
 		// "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
-		"checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+		"checkJs": true /* Enable error reporting in type-checked JavaScript files. */,
 		// "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
 
 		/* Emit */
@@ -47,9 +48,9 @@
 		// "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
 		"sourceMap": true, //                                   Create source map files for emitted JavaScript files.
 		// "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If `declaration` is true, also designates a file that bundles all .d.ts output. */
-		// "outDir": "./dist", //                                  Specify an output folder for all emitted files.
+		"outDir": "./dist", //                                  Specify an output folder for all emitted files.
 		"removeComments": true, //                              Disable emitting comments.
-		"noEmit": true,                                   /* Disable emitting files from a compilation. */
+		// "noEmit": true /* Disable emitting files from a compilation. */,
 		// "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
 		// "importsNotUsedAsValues": "remove",               /* Specify emit/checking behavior for imports that are only used for types */
 		// "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
@@ -75,7 +76,7 @@
 		/* Type Checking */
 		"strict": true, //                                  Enable all strict type-checking options.
 		// "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied `any` type.. */
-		// "strictNullChecks": true,                         /* When type checking, take into account `null` and `undefined`. */
+		"strictNullChecks": true /* When type checking, take into account `null` and `undefined`. */,
 		// "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
 		// "strictBindCallApply": true,                      /* Check that the arguments for `bind`, `call`, and `apply` methods match the original function. */
 		// "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
@@ -85,18 +86,19 @@
 		// "noUnusedLocals": true,                           /* Enable error reporting when a local variables aren't read. */
 		// "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read */
 		"exactOptionalPropertyTypes": true, //                  Interpret optional property types as written, rather than adding 'undefined'.
-		// "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
-		// "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
+		"noImplicitReturns": true /* Enable error reporting for codepaths that do not explicitly return in a function. */,
+		"noFallthroughCasesInSwitch": true /* Enable error reporting for fallthrough cases in switch statements. */,
 		// "noUncheckedIndexedAccess": true,                 /* Include 'undefined' in index signature results */
 		"noImplicitOverride": true, //                          Ensure overriding members in derived classes are marked with an override modifier.
-		// "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type */
+		"noPropertyAccessFromIndexSignature": true /* Enforces using indexed accessors for keys declared using an indexed type */,
 		// "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
 		// "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
+		"typeRoots": ["./node_modules/@types"],
 
 		/* Completeness */
 		// "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
 		"skipLibCheck": true //                                Skip type checking all .d.ts files.
 	},
-	"exclude": ["dist"],
-	"include": ["*.js", "src"],
+	"exclude": ["dist"]
+	//	"include": ["*.js", "src"],
 }

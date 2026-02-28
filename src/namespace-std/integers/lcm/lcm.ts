@@ -1,8 +1,8 @@
 // Finds the least common mulitple
 // Cppreference: https://en.cppreference.com/w/cpp/numeric/lcm
 
-import { lcm_bigint } from "./lcm_bigint.js";
-import { lcm_number } from "./lcm_number.js";
+import { lcm_bigint } from "./lcm_bigint.ts";
+import { lcm_number } from "./lcm_number.ts";
 
 export function lcm(aInteger: bigint, bInteger: bigint): bigint;
 export function lcm(aInteger: number, bInteger: number): number;

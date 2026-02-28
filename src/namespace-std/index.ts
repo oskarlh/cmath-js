@@ -1,3 +1,3 @@
-export * from "./all-numbers/index.js";
-export * from "./doubles/index.js";
-export * from "./integers/index.js";
+export * from "./all-numbers/index.ts";
+export * from "./doubles/index.ts";
+export * from "./integers/index.ts";

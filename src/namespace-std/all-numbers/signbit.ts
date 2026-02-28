@@ -1,4 +1,4 @@
-import { floatOctets } from "../../internal/index.js";
+import { floatOctets } from "../../internal/index.ts";
 
 /**
  * Determines if a number is negative or NaN with the sign bit set.

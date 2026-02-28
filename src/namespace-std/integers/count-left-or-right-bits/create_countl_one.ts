@@ -1,4 +1,4 @@
-import { create_countl_zero } from "./index.js";
+import { create_countl_zero } from "./index.ts";
 
 export type countl_one_function =
 	/**

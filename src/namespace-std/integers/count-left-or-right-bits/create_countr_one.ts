@@ -1,4 +1,4 @@
-import { create_countr_zero } from "./index.js";
+import { create_countr_zero } from "./index.ts";
 
 export type countr_one_function =
 	/**

@@ -1,4 +1,4 @@
-import { floatFromBits } from "../../internal/index.js";
+import { floatFromBits } from "../../internal/index.ts";
 
 // Converts the string arg into the corresponding quiet NaN value.
 // https://en.cppreference.com/w/cpp/numeric/math/nan
