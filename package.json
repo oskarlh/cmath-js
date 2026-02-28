@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "5.0.2",
+	"version": "5.0.3",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -16,6 +16,9 @@
 			"default": "./dist/numbers.js"
 		}
 	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"type": "module",
 	"author": "Oskar Larsson Högfeldt <oskar@oskar.pm>",
 	"contributors": [
