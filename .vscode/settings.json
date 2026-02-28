@@ -1,15 +1,15 @@
 {
-	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+  	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"eslint.format.enable": true,
 	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
-	"editor.formatOnType": true,
 	"editor.insertSpaces": false,
-	"eslint.rules.customizations": [
-		{ "rule": "prettier/prettier", "severity": "off" }
-	],
 	"files.eol": "\n",
 	"search.exclude": {
 		"**/node_module": true,
-	}
+	},
+	"typescript.preferences.importModuleSpecifierEnding": "js",
+	"typescript.preferences.importModuleSpecifier": "relative"
 }
