@@ -1,5 +1,5 @@
 name: "Verify: Test, lint, and typecheck"
-on: [ "pull_request", "push" ]
+on: ["pull_request", "push"]
 jobs:
   verify:
     name: "Verify"

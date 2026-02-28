@@ -1,10 +1,10 @@
 # You need to set up secrets.NPM_AUTH_TOKEN for this to work
-name: "Publish to NPM if package.json's \"version\" field was updated"
+name: 'Publish to NPM if package.json''s "version" field was updated'
 on:
   workflow_run:
-    branches: [ "main" ]
-    types: [ "completed" ]
-    workflows: [ "Verify: Test, lint, and typecheck" ]
+    branches: ["main"]
+    types: ["completed"]
+    workflows: ["Verify: Test, lint, and typecheck"]
 
 concurrency: publish
 
@@ -55,4 +55,4 @@ jobs:
         run: npm publish --provenance ./dist-pack/latest.tgz
 
 permissions:
-  id-token: write # Needed for provenance
+  id-token: write # Needed for provenance and for OIDC (used by NPM Trusted Publishing)
