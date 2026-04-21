@@ -1,18 +1,25 @@
 import { floatFromBits } from "../../internal/index.ts";
 
-// Converts the string arg into the corresponding quiet NaN value.
-// https://en.cppreference.com/w/cpp/numeric/math/nan
-// This is always true: Object.is(nan(<any string>), NaN).
-// Important note: JavaScript engines do not have to keep the NaN value
-// and at the time of writing (2024) at least one engine (Firefox's) only
-// supports two different NaNs (+NaN and -NaN), so in Firefox this function
-// will always return the exact same NaN. Chrome's JS engine supports all
-// possible NaN values, though, which can be observed like this:
-// (
-//   new Uint8Array(new Float64Array([nan("0")]).buffer)[0] === 0 &&
-//   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
-// )
-
+/**
+ * Converts the string argument into the corresponding quiet NaN value.
+ * https://en.cppreference.com/w/cpp/numeric/math/nan
+ * This is always true: `Object.is(nan(<any string>), NaN)`
+ * Important note: JavaScript engines do not have to keep the NaN value
+ * and at the time of writing (2024) at least one engine (Firefox's) only
+ * supports two different NaNs (+NaN and -NaN), so in Firefox this function
+ * will always return the exact same NaN. Chrome's JS engine supports all
+ * possible NaN values, though, which can be observed like this:
+ * (
+ *   new Uint8Array(new Float64Array([nan("0")]).buffer)[0] === 0 &&
+ *   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
+ * )
+ *
+ * Read more about the original function on
+ * - {@link https://en.cppreference.com/w/c/numeric/math/nan|Cppreference}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.11|The C23 final draft specification}
+ *
+ * @returns A quiet NaN with bits from the number string passed as an argument
+ */
 export function nan(arg: string): number {
 	let bits = 0n;
 
