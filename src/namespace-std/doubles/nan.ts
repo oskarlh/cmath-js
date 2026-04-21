@@ -9,10 +9,10 @@ import { floatFromBits } from "../../internal/index.ts";
  * supports two different NaNs (+NaN and -NaN), so in Firefox this function
  * will always return the exact same NaN. Chrome's JS engine supports all
  * possible NaN values, though, which can be observed like this:
- * (
+ * `
  *   new Uint8Array(new Float64Array([nan("0")]).buffer)[0] === 0 &&
  *   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
- * )
+ * `
  *
  * Read more about the original function on
  * - {@link https://en.cppreference.com/w/c/numeric/math/nan|Cppreference}
