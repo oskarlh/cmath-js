@@ -6,7 +6,7 @@ export function floatFromBits(bits64: bigint): number {
 	return dataView.getFloat64(0, true);
 }
 
-export function floatOctets(num: number): bigint {
+export function floatToBits(num: number): bigint {
 	dataView.setFloat64(0, num, true);
 	return dataView.getBigUint64(0, true);
 }

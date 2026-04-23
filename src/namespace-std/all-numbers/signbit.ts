@@ -1,4 +1,4 @@
-import { floatOctets } from "../../internal/index.ts";
+import { floatToBits } from "../../internal/index.ts";
 
 /**
  * Determines if a number is negative or NaN with the sign bit set.
@@ -10,5 +10,5 @@ import { floatOctets } from "../../internal/index.ts";
  * - {@link https://en.cppreference.com/w/cpp/numeric/math/signbit|Cppreference}
  */
 export function signbit(num: bigint | number): boolean {
-	return floatOctets(Number(num)) >= 1n << 63n;
+	return floatToBits(Number(num)) >= 1n << 63n;
 }
