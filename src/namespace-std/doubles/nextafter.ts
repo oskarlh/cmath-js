@@ -1,4 +1,13 @@
 // Cppreference: https://en.cppreference.com/w/c/numeric/math/nextafter
+/**
+ * Determines the next representable value after `num` in the direction of `toward`
+ *
+ * Read more about the original function on
+ * - {@link https://en.cppreference.com/w/c/numeric/math/nextafter|Cppreference}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.11|The C23 final draft specification}
+ *
+ * @returns The next representable value after `num` in the direction of `toward`
+ */
 export function nextafter(/*double*/ num: number, /*double*/ toward: number): /*double*/ number {
 	if (num === toward) {
 		return toward;

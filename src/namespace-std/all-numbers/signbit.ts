@@ -10,5 +10,5 @@ import { floatOctets } from "../../internal/index.ts";
  * - {@link https://en.cppreference.com/w/cpp/numeric/math/signbit|Cppreference}
  */
 export function signbit(num: bigint | number): boolean {
-	return floatOctets(Number(num))[7] > 127;
+	return floatOctets(Number(num)) >= 1n << 63n;
 }
