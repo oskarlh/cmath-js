@@ -15,7 +15,7 @@ jobs:
       exists: ${{ steps.checkpublish.outputs.exists }}
     steps:
       - name: "Checkout repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Get the version from package.json and check if it has been published already"
         id: checkpublish
@@ -28,15 +28,15 @@ jobs:
     if: needs.check.outputs.exists == '0' # Do not run if NPM already has this version
     steps:
       - name: "Checkout repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "Install NPM"
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
 
       - name: "Log in to DockerHub"
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
