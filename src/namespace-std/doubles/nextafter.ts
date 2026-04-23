@@ -1,4 +1,3 @@
-// Cppreference: https://en.cppreference.com/w/c/numeric/math/nextafter
 /**
  * Determines the next representable value after `num` in the direction of `toward`
  *
