@@ -11,7 +11,7 @@ export type countl_one_function =
  * That function counts leading 1 bits in unsigned integers.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/w/cpp/numeric/countl_one|Cppreference}
+ * - {@link https://en.cppreferencepp/numeric/countl_one|Cppreference}
  *
  * @example
  * const countl_one_u8 = create_countl_one({ bits: 8 });

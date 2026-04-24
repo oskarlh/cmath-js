@@ -2,7 +2,7 @@ import { floatFromBits } from "../../internal/index.ts";
 
 /**
  * Converts the string argument into the corresponding quiet NaN value.
- * https://en.cppreference.com/w/cpp/numeric/math/nan
+ * https://en.cppreferencepp/numeric/math/nan
  * This is always true: `Object.is(nan(<any string>), NaN)`
  * Important note: JavaScript engines do not have to keep the NaN value
  * and at the time of writing (2024) at least one engine (Firefox's) only
@@ -15,7 +15,7 @@ import { floatFromBits } from "../../internal/index.ts";
  * `
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/w/c/numeric/math/nan|Cppreference}
+ * - {@link https://en.cppreference/numeric/math/nan|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.11|The C23 final draft specification}
  *
  * @returns A quiet NaN with bits from the number string passed as an argument

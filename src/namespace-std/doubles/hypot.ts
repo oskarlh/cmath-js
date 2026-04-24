@@ -7,7 +7,7 @@
  * floating-point environments, which thankfully only apply to the 2-arg (C) version.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/w/c/numeric/math/hypot|Cppreference (C)}
+ * - {@link https://en.cppreference/numeric/math/hypot|Cppreference (C)}
  * - {@link https://en.cppreference.com/cpp/numeric/math/hypot|Cppreference (C++)}
  * - {@link https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.7|The C23 final draft specification, chapter 7}
  * - {@link https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.13.10.4|The C23 final draft specification, chapter 13}

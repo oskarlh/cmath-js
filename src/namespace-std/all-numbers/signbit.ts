@@ -7,7 +7,7 @@ import { floatToBits } from "../../internal/index.ts";
  * (such as always false or always true) in some JavaScript engines.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/w/cpp/numeric/math/signbit|Cppreference}
+ * - {@link https://en.cppreference.com/c/numeric/math/signbit|Cppreference}
  */
 export function signbit(num: bigint | number): boolean {
 	return floatToBits(Number(num)) >= 1n << 63n;

@@ -1,5 +1,5 @@
 // Finds the least common mulitple
-// Cppreference: https://en.cppreference.com/w/cpp/numeric/lcm
+// Cppreference: https://en.cppreferencepp/numeric/lcm
 
 import { lcm_bigint } from "./lcm_bigint.ts";
 import { lcm_number } from "./lcm_number.ts";

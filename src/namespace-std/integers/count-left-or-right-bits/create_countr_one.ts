@@ -11,7 +11,7 @@ export type countr_one_function =
  * That function counts trailing 1 bits in unsigned integers.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/w/cpp/numeric/countr_one|Cppreference}
+ * - {@link https://en.cppreferencepp/numeric/countr_one|Cppreference}
  *
  * @example
  * const countr_one_u8 = create_countr_one({ bits: 8 });

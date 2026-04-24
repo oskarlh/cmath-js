@@ -4,25 +4,25 @@ Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, in
 
 ## Floating-point functions
 
-- [`copysign`](https://en.cppreference.com/w/c/numeric/math/copysign)
-- [`fabs`](https://en.cppreference.com/w/c/numeric/math/fabs)
+- [`copysign`](https://en.cppreference/numeric/math/copysign)
+- [`fabs`](https://en.cppreference/numeric/math/fabs)
 - [`fpclassify`](https://en.cppreference.com/c/numeric/math/fpclassify)
-- [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
-- [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)
+- [`frexp`](https://en.cppreference/numeric/math/frexp)
+- [`hypot`](https://en.cppreferencepp/numeric/math/hypot)
 - [`iscanonical`](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.3)
 - [`isfinite`](https://en.cppreference.com/c/numeric/math/isfinite)
-- [`isinf`](https://en.cppreference.com/w/c/numeric/math/isinf)
-- [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
-- [`nan`](https://en.cppreference.com/w/c/numeric/math/nan)
-- [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
-- [`pow`](https://en.cppreference.com/w/c/numeric/math/pow)
+- [`isinf`](https://en.cppreference/numeric/math/isinf)
+- [`ldexp`](https://en.cppreference/numeric/math/ldexp)
+- [`nan`](https://en.cppreference/numeric/math/nan)
+- [`nextafter`](https://en.cppreference/numeric/math/nextafter)
+- [`pow`](https://en.cppreference/numeric/math/pow)
 
 ## Integer functions
 
 These functions accept either a `bigint` or an integer `number`:
 
-- [`abs`](https://en.cppreference.com/w/c/numeric/math/abs)
-- [`countl_one`](https://en.cppreference.com/w/cpp/numeric/countl_one) as `create_countl_one`, which is used this way:
+- [`abs`](https://en.cppreference/numeric/math/abs)
+- [`countl_one`](https://en.cppreferencepp/numeric/countl_one) as `create_countl_one`, which is used this way:
   ```ts
   import { create_countl_one } from "cmath-js";
   const countl_one_u16 = create_countl_one({ bits: 16 });
@@ -32,27 +32,27 @@ These functions accept either a `bigint` or an integer `number`:
   	`${integer.toString(2).padStart(16, "0")} has ${countl_one_u16(integer)} leading one bits.`,
   );
   ```
-- [`countl_zero`](https://en.cppreference.com/w/cpp/numeric/countl_zero) as `create_countl_zero`
-- [`countr_one`](https://en.cppreference.com/w/cpp/numeric/countr_one) as `create_countr_one`
-- [`countr_zero`](https://en.cppreference.com/w/cpp/numeric/countr_zero) as `create_countr_zero`
-- [`div`](https://en.cppreference.com/w/cpp/numeric/math/div)
-- [`gcd`](https://en.cppreference.com/w/cpp/numeric/gcd). Example:
+- [`countl_zero`](https://en.cppreferencepp/numeric/countl_zero) as `create_countl_zero`
+- [`countr_one`](https://en.cppreferencepp/numeric/countr_one) as `create_countr_one`
+- [`countr_zero`](https://en.cppreferencepp/numeric/countr_zero) as `create_countr_zero`
+- [`div`](https://en.cppreferencepp/numeric/math/div)
+- [`gcd`](https://en.cppreferencepp/numeric/gcd). Example:
   ```ts
   import { gcd } from "cmath-js";
   // Prints "The greatest common divisor of 24 and 32 is 8."
   console.log(`The greatest common divisor of 24 and 32 is ${gcd(24, 32)}.`);
   ```
-- [`lcm`](https://en.cppreference.com/w/cpp/numeric/lcm)
-- [`popcount`](https://en.cppreference.com/w/cpp/numeric/popcount)
+- [`lcm`](https://en.cppreferencepp/numeric/lcm)
+- [`popcount`](https://en.cppreferencepp/numeric/popcount)
 
 ## Functions for both floats and ints
 
-- [`iota`](https://en.cppreference.com/w/cpp/algorithm/iota)
-- [`signbit`](https://en.cppreference.com/w/c/numeric/math/signbit)
+- [`iota`](https://en.cppreference.com/cpp/algorithm/iota)
+- [`signbit`](https://en.cppreference.com/c/numeric/math/signbit)
 
 ## Mathematical constants
 
-- Constants in [the `std::numbers` namespace](https://en.cppreference.com/w/cpp/numeric/constants) are available from the `numbers` subpath export. Example:
+- Constants in [the `std::numbers` namespace](https://en.cppreferencepp/numeric/constants) are available from the `numbers` subpath export. Example:
   ```ts
   import { sqrt3 } from "cmath-js/numbers";
   console.log(`The square root of 3 is ${sqrt3}.`);
