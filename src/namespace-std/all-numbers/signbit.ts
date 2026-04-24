@@ -6,7 +6,7 @@ import { floatToBits } from "../../internal/index.ts";
  * -NaN are different so this function may give unexpected results
  * (such as always false or always true) in some JavaScript engines.
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/cpp/numeric/math/signbit|Cppreference}
  */
 export function signbit(num: bigint | number): boolean {

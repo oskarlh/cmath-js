@@ -1,7 +1,7 @@
 /**
  *  Like fabs but for integers
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/c/numeric/math/abs|Cppreference}
  */
 export function abs(integer: bigint): bigint;

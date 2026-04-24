@@ -10,7 +10,7 @@ export type countr_one_function =
  * Creates a countr_one function for unsigned integers with the specified number of bits.
  * That function counts trailing 1 bits in unsigned integers.
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/cpp/numeric/countr_one|Cppreference}
  *
  * @example

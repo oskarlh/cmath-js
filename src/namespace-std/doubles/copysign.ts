@@ -5,7 +5,7 @@ import { signbit } from "../index.ts";
  * This implementation handles positive and negative zero and positive and negative
  * NaNs (in JS engines where that difference is observable when writing NaNs to a Float64Array).
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/cpp/numeric/math/copysign|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.11|The C23 final draft specification}
  */

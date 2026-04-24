@@ -14,7 +14,7 @@ import { floatFromBits } from "../../internal/index.ts";
  *   new Uint8Array(new Float64Array([nan("92")]).buffer)[0] === 92
  * `
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/c/numeric/math/nan|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.11|The C23 final draft specification}
  *

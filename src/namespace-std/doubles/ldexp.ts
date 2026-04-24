@@ -1,7 +1,7 @@
 /**
  * Multiplies a floating-point number by an integral power of 2.
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/c/numeric/math/ldexp|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.6|The C23 final draft specification}
  *

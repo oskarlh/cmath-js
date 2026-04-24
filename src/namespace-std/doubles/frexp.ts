@@ -28,7 +28,7 @@ export interface FrexpResult {
  * is not defined in the ECMAScript standard, however, it is hard to imagine a sane ECMAScript
  * implementation would give imprecise results for 2**<integer> expressions.
  *
- * Read more about the original function on
+ * Read more about the original function here:
  * - {@link https://en.cppreference.com/w/cpp/numeric/math/frexp|Cppreference}
  */
 export function frexp(num: number): FrexpResult {
