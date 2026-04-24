@@ -10,6 +10,7 @@ Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, in
 - [`frexp`](https://en.cppreference.com/w/c/numeric/math/frexp)
 - [`hypot`](https://en.cppreference.com/w/cpp/numeric/math/hypot)
 - [`iscanonical`](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsection.7.12.3)
+- [`isinf`](https://en.cppreference.com/w/c/numeric/math/isinf)
 - [`ldexp`](https://en.cppreference.com/w/c/numeric/math/ldexp)
 - [`nan`](https://en.cppreference.com/w/c/numeric/math/nan)
 - [`nextafter`](https://en.cppreference.com/w/c/numeric/math/nextafter)
