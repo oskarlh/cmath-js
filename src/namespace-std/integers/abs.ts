@@ -2,7 +2,7 @@
  *  Like fabs but for integers
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference/numeric/math/abs|Cppreference}
+ * - {@link https://en.cppreference.com/c/numeric/math/abs|Cppreference}
  */
 export function abs(integer: bigint): bigint;
 export function abs(integer: number): number;

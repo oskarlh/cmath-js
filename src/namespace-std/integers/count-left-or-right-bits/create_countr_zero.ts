@@ -9,7 +9,7 @@ export type countr_zero_function =
  * That function counts trailing 0 bits in unsigned integers.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreferencepp/numeric/countr_zero|Cppreference}
+ * - {@link https://en.cppreference.com/cpp/numeric/countr_zero|Cppreference}
  *
  * @example
  * const countr_zero_u8 = create_countr_zero({ bits: 8 });

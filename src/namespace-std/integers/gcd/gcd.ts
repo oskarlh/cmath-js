@@ -1,6 +1,6 @@
 // Finds the greatest common divisor calculated using the
 // binary GCD algorithm: https://en.wikipedia.org/wiki/Binary_GCD_algorithm
-// Cppreference: https://en.cppreferencepp/numeric/gcd
+// Cppreference: https://en.cppreference.com/cpp/numeric/gcd
 // If one of the parameters is zero, the absolute value of the other parameter is returned
 // Expects safe integers (bigints or numbers for which Number.isSafeInteger() returns true)
 

@@ -9,7 +9,7 @@ export type countl_zero_function =
  * That function counts leading 0 bits in unsigned integers.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreferencepp/numeric/countl_zero|Cppreference}
+ * - {@link https://en.cppreference.com/cpp/numeric/countl_zero|Cppreference}
  *
  * @example
  * const countl_zero_u8 = create_countl_zero({ bits: 8 });

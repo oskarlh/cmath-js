@@ -1,5 +1,5 @@
 // Count the total number of 1 bits in an unsigned integer
-// Cppreference: https://en.cppreferencepp/numeric/popcount
+// Cppreference: https://en.cppreference.com/cpp/numeric/popcount
 export function popcount(integer: bigint | number): number {
 	if (integer <= 0 || (typeof integer === "number" && !Number.isInteger(integer))) {
 		return 0;

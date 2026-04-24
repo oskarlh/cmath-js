@@ -8,6 +8,7 @@ import { floatToBits } from "../../internal/index.ts";
  *
  * Read more about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/signbit|Cppreference}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.3.7|The C23 final draft specification}
  */
 export function signbit(num: bigint | number): boolean {
 	return floatToBits(Number(num)) >= 1n << 63n;
