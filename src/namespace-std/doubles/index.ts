@@ -4,6 +4,7 @@ export { fpclassify } from "./fpclassify.ts";
 export { frexp, type FrexpResult } from "./frexp.ts";
 export { hypot } from "./hypot.ts";
 export { iscanonical } from "./iscanonical.ts";
+export { isfinite } from "./isfinite.ts";
 export { isinf } from "./isinf.ts";
 export { ldexp } from "./ldexp.ts";
 export * from "./macros.ts";
