@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "5.6.1",
+	"version": "5.6.2",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -33,8 +33,8 @@
 		"Bits",
 		"C",
 		"C++",
-		"cmath",
 		"cmath-js",
+		"cmath",
 		"double",
 		"ECMAScript",
 		"float",
@@ -42,9 +42,9 @@
 		"frexp",
 		"gcd",
 		"IEEE754",
-		"iota",
 		"int32",
 		"int53",
+		"iota",
 		"JavaScript",
 		"lcm",
 		"Math",
