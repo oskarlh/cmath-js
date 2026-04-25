@@ -8,6 +8,7 @@ export { isfinite } from "./isfinite.ts";
 export { isinf } from "./isinf.ts";
 export { isnan } from "./isnan.ts";
 export { isnormal } from "./isnormal.ts";
+export { iszero } from "./iszero.ts";
 export { ldexp } from "./ldexp.ts";
 export * from "./macros.ts";
 export { nan } from "./nan.ts";
