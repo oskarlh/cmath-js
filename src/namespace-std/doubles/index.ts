@@ -7,6 +7,7 @@ export { iscanonical } from "./iscanonical.ts";
 export { isfinite } from "./isfinite.ts";
 export { isinf } from "./isinf.ts";
 export { isnan } from "./isnan.ts";
+export { isnormal } from "./isnormal.ts";
 export { ldexp } from "./ldexp.ts";
 export * from "./macros.ts";
 export { nan } from "./nan.ts";

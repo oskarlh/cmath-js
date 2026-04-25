@@ -13,6 +13,7 @@ Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, in
 - [`isfinite`](https://en.cppreference.com/c/numeric/math/isfinite)
 - [`isinf`](https://en.cppreference.com/c/numeric/math/isinf)
 - [`isnan`](https://en.cppreference.com/c/numeric/math/isnan)
+- [`isnormal`](https://en.cppreference.com/c/numeric/math/isnormal)
 - [`ldexp`](https://en.cppreference.com/c/numeric/math/ldexp)
 - [`nan`](https://en.cppreference.com/c/numeric/math/nan)
 - [`nextafter`](https://en.cppreference.com/c/numeric/math/nextafter)
