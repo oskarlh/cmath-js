@@ -23,7 +23,7 @@
 	"author": "Oskar Larsson Högfeldt <oskar@oskar.pm>",
 	"contributors": [
 		"Oskar Larsson Högfeldt <oskar@oskar.pm>",
-		"Joey Jo"
+		"Joey Jo <joeyjosha@proton.me>"
 	],
 	"license": "MIT",
 	"description": "C's and C++'s math functions in TypeScript & JavaScript",
