@@ -1,4 +1,5 @@
 export { abs } from "./abs.ts";
+export { bit_ceil } from "./bit_ceil/bit_ceil.ts";
 export * from "./count-left-or-right-bits/index.ts";
 export { div, type div_t, type div_t_bigint, type div_t_number } from "./div/index.ts";
 export { gcd } from "./gcd/gcd.ts";

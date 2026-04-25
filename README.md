@@ -27,6 +27,7 @@ Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, in
 These functions accept either a `bigint` or an integer `number`:
 
 - [`abs`](https://en.cppreference.com/c/numeric/math/abs)
+- [`bit_ceil`](https://en.cppreference.com/cpp/numeric/bit_ceil)
 - [`countl_one`](https://en.cppreference.com/cpp/numeric/countl_one) as `create_countl_one`, which is used this way:
   ```ts
   import { create_countl_one } from "cmath-js";
