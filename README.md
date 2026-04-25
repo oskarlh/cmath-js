@@ -14,6 +14,7 @@ Implementation of parts of C++'s numerics libraries in TypeScript/JavaScript, in
 - [`isinf`](https://en.cppreference.com/c/numeric/math/isinf)
 - [`isnan`](https://en.cppreference.com/c/numeric/math/isnan)
 - [`isnormal`](https://en.cppreference.com/c/numeric/math/isnormal)
+- [`issignaling`](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.3.8)
 - [`iszero`](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.3.10)
 - [`ldexp`](https://en.cppreference.com/c/numeric/math/ldexp)
 - [`nan`](https://en.cppreference.com/c/numeric/math/nan)
