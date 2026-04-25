@@ -12,4 +12,8 @@ describe(issignaling.name, () => {
 		expect(issignaling(Number.MAX_VALUE)).to.equal(false);
 		expect(issignaling(Number.MIN_VALUE)).to.equal(false);
 	});
+
+	it("tests NaNs", () => {
+		expect(issignaling(NaN)).to.be.a("boolean");
+	});
 });
