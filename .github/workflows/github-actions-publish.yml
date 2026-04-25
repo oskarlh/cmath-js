@@ -11,6 +11,7 @@ jobs:
   check:
     name: "Check if the version in package.json is already published to NPM"
     runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
     outputs:
       exists: ${{ steps.checkpublish.outputs.exists }}
     steps:
