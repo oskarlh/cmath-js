@@ -11,6 +11,7 @@ describe(isnormal.name, () => {
 	});
 	it("returns `false` for subnormals", () => {
 		expect(isnormal(2 ** -1023)).to.equal(false);
+		expect(isnormal(Number.MIN_VALUE)).to.equal(false);
 		expect(isnormal(-Number.MIN_VALUE)).to.equal(false);
 	});
 	it("returns `false` for NaN", () => {

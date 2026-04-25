@@ -9,6 +9,7 @@ export { isinf } from "./isinf.ts";
 export { isnan } from "./isnan.ts";
 export { isnormal } from "./isnormal.ts";
 export { issignaling } from "./issignaling.ts";
+export { issubnormal } from "./issubnormal.ts";
 export { iszero } from "./iszero.ts";
 export { ldexp } from "./ldexp.ts";
 export * from "./macros.ts";
