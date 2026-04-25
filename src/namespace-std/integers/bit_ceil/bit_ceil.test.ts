@@ -14,6 +14,9 @@ describe(bit_ceil.name, () => {
 			[7, 8],
 			[8, 8],
 			[9, 16],
+			[2 ** 32 - 1, 2 ** 32],
+			[2 ** 32, 2 ** 32],
+			[2 ** 32 + 1, 2 ** 33],
 			[2 ** 48 + 1, 2 ** 49],
 			[2 ** 52, 2 ** 52],
 		]) {
@@ -21,11 +24,12 @@ describe(bit_ceil.name, () => {
 			expect(bit_ceil(BigInt(input))).to.equal(BigInt(expectedResult));
 		}
 
-		expect(2n << (999n + 1n)).to.equal(2n << 1000n);
-		expect(2n << 999n).to.equal(2n << 999n);
+		expect(bit_ceil((1n << 999n) - 1n)).to.equal(1n << 999n);
+		expect(bit_ceil(1n << 999n)).to.equal(1n << 999n);
+		expect(bit_ceil((1n << 999n) + 1n)).to.equal(1n << 1000n);
 	});
 
-	it("returns `1` for non-integers and negative numbers", () => {
+	it("returns one for non-integers and negative numbers", () => {
 		const invalid = [
 			NaN,
 			-1,

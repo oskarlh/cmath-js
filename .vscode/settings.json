@@ -2,14 +2,14 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
-  	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"eslint.format.enable": true,
 	"editor.formatOnSave": true,
 	"editor.insertSpaces": false,
 	"files.eol": "\n",
+	"js/ts.preferences.importModuleSpecifierEnding": "js",
+	"js/ts.preferences.importModuleSpecifier": "relative",
 	"search.exclude": {
-		"**/node_module": true,
-	},
-	"typescript.preferences.importModuleSpecifierEnding": "js",
-	"typescript.preferences.importModuleSpecifier": "relative"
+		"**/node_module": true
+	}
 }
