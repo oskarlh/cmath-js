@@ -1,3 +1,4 @@
+// From https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#section.7.12
 export const FP_INFINITE = 0;
 export const FP_NAN = 1;
 export const FP_NORMAL = 2;

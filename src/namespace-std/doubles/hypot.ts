@@ -9,8 +9,8 @@
  * Read more about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/hypot|Cppreference (C)}
  * - {@link https://en.cppreference.com/cpp/numeric/math/hypot|Cppreference (C++)}
- * - {@link https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.7.12.7|The C23 final draft specification, chapter 7}
- * - {@link https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf#subsection.13.10.4|The C23 final draft specification, chapter 13}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.7.4|The C23 final draft specification, chapter 7}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.13.10.4.4|The C23 final draft specification, annex F}
  * - {@link https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4928.pdf#subsection.28.7.3|The C++23 final draft specification} for the 3-arg version
  * @returns The hypothenuse
  */

@@ -10,6 +10,7 @@ export type countl_zero_function =
  *
  * Read more about the original function here:
  * - {@link https://en.cppreference.com/cpp/numeric/countl_zero|Cppreference}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4928.pdf#subsection.22.15.7|The C++23 final draft specification}
  *
  * @example
  * const countl_zero_u8 = create_countl_zero({ bits: 8 });

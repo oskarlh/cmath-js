@@ -29,7 +29,8 @@ export interface FrexpResult {
  * implementation would give imprecise results for 2**<integer> expressions.
  *
  * Read more about the original function here:
- * - {@link https://en.cppreference.com/cpp/numeric/math/frexp|Cppreference}
+ * - {@link https://en.cppreference.com/c/numeric/math/frexp|Cppreference}
+ * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.6.7|The C23 final draft specification}
  */
 export function frexp(num: number): FrexpResult {
 	if (num === 0 || !Number.isFinite(num)) {
