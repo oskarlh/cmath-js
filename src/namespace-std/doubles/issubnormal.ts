@@ -2,7 +2,7 @@ import { fpclassify } from "./fpclassify.ts";
 import { FP_SUBNORMAL } from "./macros.ts";
 
 /**
- * Checks if a floating-point number is issubnormal
+ * Checks if a floating-point number is subnormal
  * (very small - not normal, infinite, NaN, or zero)
  *
  * Read more about the original function here:
