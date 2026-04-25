@@ -1,5 +1,6 @@
 // Mathematical constants defined in the namespace std::numbers
 // cppreference: https://en.cppreference.com/cpp/numeric/constants
+// C++23 spec: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4928.pdf#subsection.28.8.1
 
 export const e = Math.E;
 export const egamma = 0.5772156649015329; // The Euler-Mascheroni constant
