@@ -35,7 +35,7 @@ export function create_countl_one({
 	/**
 	 * The number of bits to look at. Must be an integer >= 0.
 	 * Required since countl_one needs to look a fixed number of binary digits.
-	 * In C++, that number is std:: numeric_limits<unsigned integer type>::digits,
+	 * In C++, that number is `std::numeric_limits<unsigned integer type>::digits`,
 	 * but JavaScript does not have anything like that.
 	 */
 	bits: number;

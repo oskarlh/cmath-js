@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "5.8.0",
+	"version": "5.9.0",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

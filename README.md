@@ -47,6 +47,7 @@ These functions accept either a `bigint` or an integer `number`:
   // Prints "The greatest common divisor of 24 and 32 is 8."
   console.log(`The greatest common divisor of 24 and 32 is ${gcd(24, 32)}.`);
   ```
+- [`has_single_bit`](https://en.cppreference.com/cpp/numeric/has_single_bit)
 - [`lcm`](https://en.cppreference.com/cpp/numeric/lcm)
 - [`popcount`](https://en.cppreference.com/cpp/numeric/popcount)
 

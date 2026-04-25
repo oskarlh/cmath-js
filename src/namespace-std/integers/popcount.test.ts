@@ -4,7 +4,6 @@ import { expect } from "chai";
 
 describe(popcount.name, () => {
 	it("counts the number of set bits in an integer", () => {
-		// The variant with a variable number of digits only makes sense for integers >= 1
 		expect(popcount(0b0)).to.equal(0);
 		expect(popcount(0b0n)).to.equal(0);
 
