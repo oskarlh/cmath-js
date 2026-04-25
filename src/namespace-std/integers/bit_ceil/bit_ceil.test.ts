@@ -38,7 +38,7 @@ describe(bit_ceil.name, () => {
 			-0xffffffffffffffffffffffffffffffffn,
 		];
 		for (const inv of invalid) {
-			expect(Number(bit_ceil(inv))).to.equal(1);
+			expect(bit_ceil(inv)).to.be.oneOf([1, 1n]);
 		}
 	});
 });
