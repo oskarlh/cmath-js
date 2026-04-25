@@ -1,5 +1,5 @@
 /**
- * isFinite is just like JavaScript's Number.isFinite
+ * `isFinite()` is just like JavaScript's `Number.isFinite()`
  *
  * Read more about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/isfinite|Cppreference}
