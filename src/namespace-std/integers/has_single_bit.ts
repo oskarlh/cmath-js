@@ -9,6 +9,6 @@ export function has_single_bit(integer: bigint | number): boolean {
 	if (typeof integer === "number" && !Number.isInteger(integer)) {
 		return false;
 	}
-
-	return String(BigInt(integer)).lastIndexOf("1") === 0;
+	const asBigInt = BigInt(integer);
+	return asBigInt !== 0n && !(asBigInt & (asBigInt - 1n));
 }

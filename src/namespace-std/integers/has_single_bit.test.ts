@@ -13,6 +13,9 @@ describe(has_single_bit.name, () => {
 		expect(has_single_bit(0b11)).to.equal(false);
 		expect(has_single_bit(0b11n)).to.equal(false);
 
+		expect(has_single_bit(0b10)).to.equal(true);
+		expect(has_single_bit(0b10n)).to.equal(true);
+
 		expect(has_single_bit(0b11011)).to.equal(false);
 		expect(has_single_bit(0b11011n)).to.equal(false);
 
