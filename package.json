@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "git+https://github.com/oskarlh/cmath-js.git"
 	},
-	"version": "5.6.3",
+	"version": "5.6.4",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -87,7 +87,7 @@
 	"funding": [
 		{
 			"type": "github",
-			"url": "https://github.com/sponsors/oskarlh"
+			"url": "https://github.com/oskarlh/cmath-js?sponsor=1"
 		}
 	]
 }
