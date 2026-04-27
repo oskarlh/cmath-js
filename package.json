@@ -63,7 +63,7 @@
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@types/chai": "^5.2.3",
-		"@types/node": "^24",
+		"@types/node": "^25",
 		"chai": "^6.2.2",
 		"eslint": "^10.0.2",
 		"eslint-config-prettier": "^10.1.8",
