@@ -8,7 +8,7 @@ export type countr_zero_function =
  * Creates a countr_zero function for unsigned integers with the specified number of bits.
  * That function counts trailing 0 bits in unsigned integers.
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/cpp/numeric/countr_zero|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4928.pdf#subsection.22.15.7|The C++23 final draft specification}
  *

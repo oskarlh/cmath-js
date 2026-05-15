@@ -6,7 +6,7 @@ import { floatToBits } from "../../internal/index.ts";
  * quietly alter any bits in NaN so this may give unexpected results
  * (such as always false or always true) in some JavaScript engines.
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.3.8|The C23 final draft specification}
  */
 export function issignaling(num: number): boolean {

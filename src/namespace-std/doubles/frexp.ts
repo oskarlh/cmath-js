@@ -28,7 +28,7 @@ export interface FrexpResult {
  * is not defined in the ECMAScript standard, however, it is hard to imagine a sane ECMAScript
  * implementation would give imprecise results for 2**<integer> expressions.
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/frexp|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.6.7|The C23 final draft specification}
  */
@@ -39,23 +39,15 @@ export function frexp(num: number): FrexpResult {
 
 	const absNum: number = Math.abs(num);
 
-	let exponent: number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 1);
+	// The `+ 3` and the while loop below compensate for rounding errors that may occur because of ECMAScript's Math.log2's
+	// undefined precision and together with the `max` solves the issue of `2 ** -exp === Infinity` when `exp <= -1024`
+	let exponent: number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 2);
 	let fraction: number = absNum * 2 ** -exponent;
 
-	// These while loops compensate for rounding errors that may occur because of ECMAScript's Math.log2's undefined precision
-	// and the first one also helps work around the issue of 2 ** -exp === Infinity when exp <= -1024
 	while (fraction < 0.5) {
 		fraction *= 2;
 		--exponent;
 	}
-
-	// This might never run and that's okay. See the comment above
-	/* node:coverage disable */
-	while (fraction >= 1) {
-		fraction *= 0.5;
-		++exponent;
-	}
-	/* node:coverage enable */
 
 	if (num < 0) {
 		fraction = -fraction;

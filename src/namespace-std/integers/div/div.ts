@@ -11,7 +11,7 @@ export type div_t<NumType extends AnyInteger = AnyInteger> = (NumType extends bi
 /**
  * Computes the quotient and the remainder of a division.
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/div|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.24.6.2|The C23 final draft specification}
  **/

@@ -6,7 +6,7 @@
  * The implementation is complicated by the requirements for implementations in IEC 60559
  * floating-point environments, which thankfully only apply to the 2-arg (C) version.
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/hypot|Cppreference (C)}
  * - {@link https://en.cppreference.com/cpp/numeric/math/hypot|Cppreference (C++)}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.7.4|The C23 final draft specification, chapter 7}

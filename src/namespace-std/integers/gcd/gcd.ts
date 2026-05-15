@@ -9,7 +9,7 @@ import { gcd_number } from "./gcd_number.ts";
  * This implementation uses {@link https://en.wikipedia.org/wiki/Binary_GCD_algorithm|the binary GCD algorithm}.
  *
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/cpp/numeric/gcd|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2023/n4928.pdf#subsection.27.10.14|The C++23 final draft specification}
  **/

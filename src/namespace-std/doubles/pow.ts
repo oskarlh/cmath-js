@@ -1,7 +1,7 @@
 /**
  * Computes the value of a base raised to an exponent
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/pow|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.7.5|The C23 final draft specification, chapter 7}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.13.10.4.5|The C23 final draft specification, annex F}

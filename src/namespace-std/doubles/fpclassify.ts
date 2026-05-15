@@ -12,7 +12,7 @@ import {
  * to the value of the argument
  *
  *
- * Read more about the original function here:
+ * Read about the original function here:
  * - {@link https://en.cppreference.com/c/numeric/math/fpclassify|Cppreference}
  * - {@link https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf#subsubsection.7.12.3.1|The C23 final draft specification}
  *
