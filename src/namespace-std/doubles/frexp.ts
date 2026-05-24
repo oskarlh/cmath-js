@@ -41,7 +41,7 @@ export function frexp(num: number): FrexpResult {
 
 	// The `+ 2` and the while loop below compensate for rounding errors that may occur because of ECMAScript's Math.log2's
 	// undefined precision and together with the `max` solves the issue of `2 ** -exp === Infinity` when `exp <= -1024`
-	let exponent: number = Math.max(-1023, Math.floor(Math.log2(absNum)) + 2);
+	let exponent: number = Math.max(-1023, Math.trunc(Math.log2(absNum)) + 2);
 	let fraction: number = absNum * 2 ** -exponent;
 
 	while (fraction < 0.5) {
@@ -49,9 +49,7 @@ export function frexp(num: number): FrexpResult {
 		--exponent;
 	}
 
-	if (num < 0) {
-		fraction = -fraction;
-	}
+	fraction *= Math.sign(num);
 
 	return {
 		exponent,
