@@ -18,22 +18,6 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v6
 
-      - name: "Testing 0"
-        run: |
-          npm view . --json
-        id: debugcheckpublish0
-      - name: "Testing 1"
-        run: |
-          npm view . versions --json | jq "if any(.[]; . == \"5.14.0\") then 1 else 0 end"
-        id: debugcheckpublish1
-      - name: "Testing 2"
-        run: |
-          npm pkg get version --json
-        id: debugcheckpublish2
-      - name: "Testing 3"
-        run: |
-          jq -r .version package.json
-        id: debugcheckpublish3
       - name: "See if the version from package.json has been published already"
         run: |
           echo "exists=$(npm view . versions --json | jq "if any(.[]; . == \"$(jq -r .version package.json)\") then 1 else 0 end")" >> $GITHUB_OUTPUT
