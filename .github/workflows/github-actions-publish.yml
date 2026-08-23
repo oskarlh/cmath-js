@@ -32,12 +32,11 @@ jobs:
         id: debugcheckpublish2
       - name: "Testing 3"
         run: |
-          npm pkg get version --json | jq .version
+          jq -r .version package.json
         id: debugcheckpublish3
       - name: "See if the version from package.json has been published already"
-        # Note: `(npm pkg get version --json | jq -r .version)` can be replaced with `(npm pkg get version)` once GitHub's ubuntu-latest is on NPM 12
         run: |
-          echo "exists=$(npm view . versions --json | jq "if any(.[]; . == \"$(npm pkg get version --json | jq -r .version)\") then 1 else 0 end")" >> $GITHUB_OUTPUT
+          echo "exists=$(npm view . versions --json | jq "if any(.[]; . == \"$(jq -r .version package.json)\") then 1 else 0 end")" >> $GITHUB_OUTPUT
         id: checkpublish
 
   publish:
