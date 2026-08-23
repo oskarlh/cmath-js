@@ -24,7 +24,7 @@ jobs:
         id: debugcheckpublish0
       - name: "Testing 1"
         run: |
-          npm view . --json | jq "if any(.[0].versions[]; . == "5.14.0") then 1 else 0 end")"
+          npm view . --json | jq "if any(.[0].versions[]; . == "5.14.0") then 1 else 0 end"
         id: debugcheckpublish1
       - name: "Testing 2"
         run: |
