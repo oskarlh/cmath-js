@@ -24,7 +24,7 @@ jobs:
         id: debugcheckpublish0
       - name: "Testing 1"
         run: |
-          npm view . --json | jq "if any(.[0].versions[]; . == "5.14.0") then 1 else 0 end"
+          npm view . --json | jq "if any(.[0].versions[]; . == \"5.14.0\") then 1 else 0 end"
         id: debugcheckpublish1
       - name: "Testing 2"
         run: |
@@ -36,7 +36,7 @@ jobs:
         id: debugcheckpublish3
       - name: "See if the version from package.json has been published already"
         run: |
-          echo "exists=$(npm view . --json | jq "if any(.[0].versions[]; . == $(npm pkg get version --json | jq .version)) then 1 else 0 end")" >> $GITHUB_OUTPUT
+          echo "exists=$(npm view . --json | jq "if any(.[0].versions[]; . == \"$(npm pkg get version --json | jq -r .version)\") then 1 else 0 end")" >> $GITHUB_OUTPUT
         id: checkpublish
 
   publish:
