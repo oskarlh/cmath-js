@@ -18,9 +18,10 @@ jobs:
       - name: "Checkout repository"
         uses: actions/checkout@v6
 
-      - name: "Get the version from package.json and check if it has been published already"
+      - name: "See if the version from package.json has been published already"
+        run: |
+          echo "exists=$(npm view . --json | jq "if any(.[0].versions[]; . == $(npm pkg get version --json | jq .version)) then 1 else 0 end")" >> $GITHUB_OUTPUT
         id: checkpublish
-        uses: tehpsalmist/npm-publish-status-action@v1
 
   publish:
     name: "Publish to NPM"
